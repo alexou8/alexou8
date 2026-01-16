@@ -60,14 +60,6 @@ I enjoy building **end-to-end solutions** — from system design and APIs to dat
 
 ---
 
-## 🎯 What I’m Currently Focused On
-- Backend & systems engineering
-- Applied AI / ML projects with measurable impact
-- Scalable APIs, databases, and data pipelines
-- Preparing for **SWE, AI/ML, and IT internships (Summer 2026)**
-
----
-
 ## 📌 Additional Information
 
 ### Languages
@@ -77,13 +69,6 @@ I enjoy building **end-to-end solutions** — from system design and APIs to dat
 
 ### Interests
 - PC Building, Keyboard Enthusiast, Sports (Golf, Tennis, Badminton, Pickleball), Cooking, Travelling
-
----
-
-## 📫 Let’s Connect
-- 💼 LinkedIn: https://www.linkedin.com/in/alexou8/
-- 🌐 Portfolio: IN PROGRESS
-- 📧 Email: oualex8@gmail.com
 
 ---
 
