@@ -2,7 +2,7 @@
 <!--  GITHUB PROFILE README -->
 <!-- ===================== -->
 
-<img src="banner.gif" alt="Banner" width="100%" height="300" />
+<img src="banner.gif" alt="Banner" width="100%" height="200" />
 
 ## Hi, I’m Alex 👋  
 🎓 Computer Science @ Wilfrid Laurier University  
