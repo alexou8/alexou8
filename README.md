@@ -20,12 +20,12 @@ I enjoy building **end-to-end solutions** from system design, APIs to data pipel
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Lua](https://img.shields.io/badge/Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white)
-![VBA](https://img.shields.io/badge/VBA-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
+![VBA](https://img.shields.io/badge/VBA-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 
 ### Frameworks & Libraries
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
@@ -45,12 +45,12 @@ I enjoy building **end-to-end solutions** from system design, APIs to data pipel
 ![Microsoft Office](https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white)
 
 ### Development Areas
-![Fullstack Development](https://img.shields.io/badge/Fullstack_Development-0A66C2?style=for-the-badge)
-![API Design](https://img.shields.io/badge/API_Design-0052CC?style=for-the-badge)
-![Data Structures & Algorithms](https://img.shields.io/badge/Data_Structures_&_Algorithms-6A1B9A?style=for-the-badge)
 ![AI / ML](https://img.shields.io/badge/AI_&_ML-FF6F00?style=for-the-badge)
-![Systems & Networking](https://img.shields.io/badge/Systems_&_Networking-455A64?style=for-the-badge)
+![Fullstack Development](https://img.shields.io/badge/Fullstack_Development-0A66C2?style=for-the-badge)
+![Data Structures & Algorithms](https://img.shields.io/badge/Data_Structures_&_Algorithms-6A1B9A?style=for-the-badge)
+![API Design](https://img.shields.io/badge/API_Design-0052CC?style=for-the-badge)
 ![Automation & Scripting](https://img.shields.io/badge/Automation_&_Scripting-2E7D32?style=for-the-badge)
+![Systems & Networking](https://img.shields.io/badge/Systems_&_Networking-455A64?style=for-the-badge)
 
 ---
 
