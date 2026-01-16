@@ -45,7 +45,7 @@ I enjoy building **end-to-end solutions** from system design, APIs to data pipel
 ![Microsoft Office](https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white)
 
 ### Development Areas
-![Backend Development](https://img.shields.io/badge/Backend_Development-0A66C2?style=for-the-badge)
+![Fullstack Development](https://img.shields.io/badge/Fullstack_Development-0A66C2?style=for-the-badge)
 ![API Design](https://img.shields.io/badge/API_Design-0052CC?style=for-the-badge)
 ![Data Structures & Algorithms](https://img.shields.io/badge/Data_Structures_&_Algorithms-6A1B9A?style=for-the-badge)
 ![AI / ML](https://img.shields.io/badge/AI_&_ML-FF6F00?style=for-the-badge)
