@@ -6,7 +6,7 @@
 
 ## 👨‍💻 About Me
 I’m a Computer Science student with strong interests in **backend systems, data-driven applications, and applied AI/ML**.  
-I enjoy building **end-to-end solutions** — from system design and APIs to data pipelines and intelligent features — with a focus on **scalability, performance, and real-world impact**.
+I enjoy building **end-to-end solutions** from system design, APIs to data pipelines, and intelligent features with a focus on **scalability, performance, and real-world impact**.
 
 - Strong foundation in **data structures, algorithms, networking, and databases**
 - Experience with **backend development, system-level design, and automation**
