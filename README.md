@@ -111,14 +111,7 @@ I enjoy building **end-to-end solutions** — from system design and APIs to dat
 ![Mandarin](https://img.shields.io/badge/Mandarin-Conversational-2E7D32?style=for-the-badge)
 
 ### Interests
-![PC Building](https://img.shields.io/badge/PC_Building-000000?style=for-the-badge)
-![Keyboard Enthusiast](https://img.shields.io/badge/Keyboard_Enthusiast-555555?style=for-the-badge)
-![Golf](https://img.shields.io/badge/Golf-2E7D32?style=for-the-badge)
-![Tennis](https://img.shields.io/badge/Tennis-1976D2?style=for-the-badge)
-![Badminton](https://img.shields.io/badge/Badminton-D32F2F?style=for-the-badge)
-![Pickleball](https://img.shields.io/badge/Pickleball-FF9800?style=for-the-badge)
-![Cooking](https://img.shields.io/badge/Cooking-8D6E63?style=for-the-badge)
-![Traveling](https://img.shields.io/badge/Traveling-0288D1?style=for-the-badge)
+- PC Building, Keyboard Enthusiast, Sports (Golf, Tennis, Badminton, Pickleball), Cooking, Travelling
 
 ---
 
