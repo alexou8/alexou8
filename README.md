@@ -9,7 +9,7 @@ I’m a Computer Science student with strong interests in **backend systems, dat
 I enjoy building **end-to-end solutions** from system design, APIs to data pipelines, and intelligent features with a focus on **scalability, performance, and real-world impact**.
 
 - Strong foundation in **data structures, algorithms, networking, and databases**
-- Experience with **backend development, system-level design, and automation**
+- Experience with **full-stack development, system-level design, and automation**
 - Passionate about applying **AI/ML to solve practical problems**
 
 ---
