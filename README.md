@@ -7,7 +7,7 @@
 ## Hi, I’m Alex 👋  
 🎓 Computer Science @ Wilfrid Laurier University  
 💻 Software Engineering • AI/ML • Systems • IT  
-🚀 Actively building projects for Summer 2026 internships
+🚀 Actively building projects with meaningful real-world impact 
 
 ---
 
