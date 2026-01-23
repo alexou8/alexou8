@@ -4,6 +4,14 @@
 
 <img src="banner.gif" alt="Banner" width="100%" height="200" />
 
+---
+
+## 🌐 Live Portfolio Website
+
+Status: **In progress**. Preview: **https://alex-ou-portfolio.vercel.app**
+
+---
+
 ## 👨‍💻 About Me
 I’m a Computer Science student with strong interests in **backend systems, data-driven applications, and applied AI/ML**.  
 I enjoy building **end-to-end solutions** from system design, APIs to data pipelines, and intelligent features with a focus on **scalability, performance, and real-world impact**.
