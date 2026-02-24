@@ -8,7 +8,7 @@
 
 ## 🌐 Live Portfolio Website
 
-Status: **In progress**. Preview: **https://alex-ou-portfolio.vercel.app**
+Status: **In progress**. Preview: **https://alexou.ca/**
 
 ---
 
