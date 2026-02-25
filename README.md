@@ -2,7 +2,7 @@
 <!--  GITHUB PROFILE README -->
 <!-- ===================== -->
 
-<img src="banner.gif" alt="Banner" width="100%" height="200" />
+![Alex Ou Banner](./assets/alexou-banner.svg)
 
 ---
 
