@@ -6,13 +6,13 @@
 
 ---
 
-## 🌐 Live Portfolio Website
+## Live Portfolio Website
 
 Status: **In progress**. Preview: **https://alexou.ca/**
 
 ---
 
-## 👨‍💻 About Me
+## About Me
 I’m a Computer Science student with strong interests in **backend systems, data-driven applications, and applied AI/ML**.  
 I enjoy building **end-to-end solutions** from system design, APIs to data pipelines, and intelligent features with a focus on **scalability, performance, and real-world impact**.
 
@@ -22,7 +22,7 @@ I enjoy building **end-to-end solutions** from system design, APIs to data pipel
 
 ---
 
-## 🛠️ Technical Skills
+## Technical Skills
 
 ### Programming Languages
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -62,7 +62,7 @@ I enjoy building **end-to-end solutions** from system design, APIs to data pipel
 
 ---
 
-## 📌 Additional Information
+## Additional Information
 
 ### Languages
 ![English](https://img.shields.io/badge/English-Fluent-2E7D32?style=for-the-badge)
