@@ -1,114 +1,250 @@
 <svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background gradient -->
+    <!-- Background gradient: light neumorphic -->
     <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0B0D10"/>
-      <stop offset="60%" stop-color="#111418"/>
-      <stop offset="100%" stop-color="#0A0C0F"/>
+      <stop offset="0%" stop-color="#e8eaed"/>
+      <stop offset="50%" stop-color="#e6e6e6"/>
+      <stop offset="100%" stop-color="#dfe1e4"/>
     </linearGradient>
 
-    <!-- Accent gradient -->
-    <linearGradient id="accentGrad" x1="120" y1="50" x2="980" y2="280" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0F6B4A"/>
-      <stop offset="50%" stop-color="#169B66"/>
-      <stop offset="100%" stop-color="#0C5A3E"/>
+    <!-- Green accent gradient -->
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#169B66"/>
+      <stop offset="100%" stop-color="#0F6B4A"/>
     </linearGradient>
 
-    <!-- Subtle glow -->
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <!-- Circular text gradient (dark on light) -->
+    <linearGradient id="circTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#444444"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+
+    <!-- Neumorphic outer shadow filter for card -->
+    <filter id="neuShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="8" dy="8" stdDeviation="10" flood-color="#bebebe" flood-opacity="0.7" result="dark"/>
+      <feDropShadow dx="-8" dy="-8" stdDeviation="10" flood-color="#ffffff" flood-opacity="0.9" result="light"/>
     </filter>
 
-    <!-- Text glow -->
-    <filter id="textGlow" x="-20%" y="-30%" width="140%" height="180%">
-      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#1FC98A" flood-opacity="0.16"/>
+    <!-- Name glow filter -->
+    <filter id="nameGlow" x="-10%" y="-30%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#169B66" flood-opacity="0.22"/>
     </filter>
 
-    <!-- Carbon pattern -->
-    <pattern id="carbon" width="24" height="24" patternUnits="userSpaceOnUse">
-      <rect width="24" height="24" fill="#0B0D10"/>
-      <path d="M0 0h12v12H0z" fill="#101318"/>
-      <path d="M12 12h12v12H12z" fill="#101318"/>
-      <path d="M12 0h12v12H12z" fill="#0D1014"/>
-      <path d="M0 12h12v12H0z" fill="#0D1014"/>
+    <!-- Inner shadow for inset elements -->
+    <filter id="insetShadow" x="-5%" y="-10%" width="110%" height="120%">
+      <feComposite in="SourceGraphic" in2="SourceGraphic" operator="over"/>
+    </filter>
+
+    <!-- Scan line gradient -->
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#169B66" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#169B66" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#169B66" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Soft dot pattern -->
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#c8cacc" opacity="0.45"/>
     </pattern>
 
-    <!-- Scan line -->
-    <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="white" stop-opacity="0"/>
-      <stop offset="50%" stop-color="white" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="white" stop-opacity="0"/>
-    </linearGradient>
+    <!-- Circular path for spinning text ring (centered at 1040,160 r=128) -->
+    <path id="ringCurve"
+      d="M 1040,160 m -128,0 a 128,128 0 1,1 256,0 a 128,128 0 1,1 -256,0"
+      fill="none"/>
+
+    <!-- Clip circle for ring area -->
+    <clipPath id="circleClip">
+      <circle cx="1040" cy="160" r="148"/>
+    </clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="320" rx="28" fill="url(#bgGrad)"/>
-  <rect width="1200" height="320" rx="28" fill="url(#carbon)" opacity="0.22"/>
+  <!-- ══ BACKGROUND ══ -->
+  <rect width="1200" height="320" rx="24" fill="url(#bgGrad)"/>
+  <!-- Subtle dot texture -->
+  <rect width="1200" height="320" rx="24" fill="url(#dots)"/>
 
-  <!-- Border -->
-  <rect x="8" y="8" width="1184" height="304" rx="20" stroke="#1FC98A" stroke-opacity="0.20" stroke-width="2"/>
+  <!-- ══ OUTER BORDER ══ -->
+  <!-- Light highlight top-left -->
+  <rect x="2" y="2" width="1196" height="316" rx="23"
+        stroke="#ffffff" stroke-opacity="0.90" stroke-width="1.5" fill="none"/>
+  <!-- Dark shadow bottom-right -->
+  <rect x="3" y="3" width="1194" height="314" rx="22"
+        stroke="#bebebe" stroke-opacity="0.55" stroke-width="1" fill="none"/>
 
-  <!-- Decorative lines -->
-  <path d="M-50 255 C130 180, 250 310, 470 220 C670 140, 835 290, 1050 205 C1130 173, 1200 175, 1260 165"
-        stroke="url(#accentGrad)" stroke-width="2.2" opacity="0.52" fill="none" filter="url(#softGlow)"/>
-  <path d="M-30 275 C150 210, 270 320, 490 240 C700 170, 860 300, 1080 225 C1140 205, 1205 198, 1265 190"
-        stroke="#1FC98A" stroke-width="1" opacity="0.22" fill="none"/>
-
-  <!-- Left accent bar -->
-  <rect x="72" y="64" width="8" height="192" rx="4" fill="url(#accentGrad)" opacity="0.85">
-    <animate attributeName="opacity" values="0.65;1;0.65" dur="3.6s" repeatCount="indefinite"/>
+  <!-- ══ LEFT ACCENT BAR ══ -->
+  <rect x="60" y="56" width="7" height="208" rx="3.5" fill="url(#accentGrad)" opacity="0.9">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.6s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Small badge -->
-  <g transform="translate(96,72)">
-    <rect x="0" y="0" width="160" height="34" rx="17" fill="#0F1318" stroke="#1FC98A" stroke-opacity="0.25"/>
-    <circle cx="18" cy="17" r="5" fill="#1FC98A">
-      <animate attributeName="opacity" values="1;0.4;1" dur="1.8s" repeatCount="indefinite"/>
+  <!-- ══ GITHUB PROFILE BADGE ══ -->
+  <g transform="translate(82,62)">
+    <!-- Badge: neumorphic pill -->
+    <rect x="0" y="0" width="168" height="34" rx="17"
+          fill="#e6e6e6"
+          stroke="#d0d0d0" stroke-width="1"/>
+    <!-- Highlight edge -->
+    <rect x="0.5" y="0.5" width="167" height="33" rx="16.5"
+          stroke="#ffffff" stroke-opacity="0.80" stroke-width="1" fill="none"/>
+    <!-- Pulse dot -->
+    <circle cx="18" cy="17" r="5" fill="#169B66">
+      <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/>
     </circle>
-    <text x="32" y="22" fill="#DDFCEF" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" letter-spacing="1.1">
+    <!-- Badge text -->
+    <text x="32" y="22"
+          fill="#3a3a3a"
+          font-family="Segoe UI, Inter, Arial, sans-serif"
+          font-size="12.5"
+          font-weight="600"
+          letter-spacing="1.4">
       GITHUB PROFILE
     </text>
   </g>
 
-  <!-- Full name (properly aligned, all white) -->
-  <g filter="url(#textGlow)">
-    <text x="95" y="182"
-          fill="#FFFFFF"
+  <!-- ══ NAME ══ -->
+  <g filter="url(#nameGlow)">
+    <text x="82" y="188"
+          fill="#1a1a1a"
           font-family="Inter, Segoe UI, Arial, sans-serif"
-          font-size="84"
+          font-size="82"
           font-weight="800"
-          letter-spacing="1.2">
+          letter-spacing="1.0">
       Alex Ou
     </text>
   </g>
 
-  <!-- Subtitle -->
-  <text x="98" y="224"
-        fill="#B7C2CC"
+  <!-- ══ SUBTITLE ══ -->
+  <text x="85" y="228"
+        fill="#4a5568"
         font-family="Inter, Segoe UI, Arial, sans-serif"
-        font-size="22"
+        font-size="21"
         font-weight="500"
-        letter-spacing="0.8">
-    Software • AI • ML • Data • Systems
+        letter-spacing="0.6">
+    Software  •  AI  •  ML  •  Data  •  Systems
   </text>
 
-  <!-- Bottom micro text -->
-  <text x="98" y="270"
-        fill="#6E7B87"
+  <!-- ══ TAGLINE ══ -->
+  <text x="85" y="268"
+        fill="#888e96"
         font-family="Consolas, Menlo, monospace"
-        font-size="14"
-        letter-spacing="0.8">
+        font-size="13.5"
+        letter-spacing="0.5">
     Building clean, reliable, and design-forward software
   </text>
 
-  <!-- Animated scan line -->
-  <g opacity="0.12">
-    <rect x="-300" y="0" width="300" height="320" fill="url(#scanGrad)">
-      <animate attributeName="x" from="-300" to="1200" dur="4.8s" repeatCount="indefinite"/>
-    </rect>
+  <!-- ══ DIVIDER (vertical between text and ring) ══ -->
+  <line x1="862" y1="48" x2="862" y2="272"
+        stroke="#cccccc" stroke-width="1" opacity="0.7"/>
+  <!-- Highlight on divider -->
+  <line x1="863" y1="48" x2="863" y2="272"
+        stroke="#ffffff" stroke-opacity="0.8"/>
+
+  <!-- ══ CIRCULAR NEUMORPHIC RING ELEMENT (right side) ══ -->
+  <!-- Outer neumorphic circle background -->
+  <circle cx="1040" cy="160" r="138"
+          fill="#e6e6e6"/>
+  <!-- Dark shadow (bottom-right) -->
+  <circle cx="1040" cy="160" r="138"
+          fill="none"
+          stroke="#bebebe" stroke-width="16" stroke-opacity="0.5"
+          stroke-dasharray="434" stroke-dashoffset="-217"
+          transform="rotate(45 1040 160)"/>
+  <!-- Light highlight (top-left) -->
+  <circle cx="1040" cy="160" r="138"
+          fill="none"
+          stroke="#ffffff" stroke-width="16" stroke-opacity="0.9"
+          stroke-dasharray="434" stroke-dashoffset="217"
+          transform="rotate(45 1040 160)"/>
+
+  <!-- Inner inset circle -->
+  <circle cx="1040" cy="160" r="106"
+          fill="#e6e6e6"/>
+  <circle cx="1040" cy="160" r="106"
+          fill="none"
+          stroke="#d0d0d0" stroke-width="8" stroke-opacity="0.5"
+          stroke-dasharray="333" stroke-dashoffset="-166"
+          transform="rotate(45 1040 160)"/>
+  <circle cx="1040" cy="160" r="106"
+          fill="none"
+          stroke="#ffffff" stroke-width="8" stroke-opacity="0.85"
+          stroke-dasharray="333" stroke-dashoffset="166"
+          transform="rotate(45 1040 160)"/>
+
+  <!-- Innermost face circle -->
+  <circle cx="1040" cy="160" r="78"
+          fill="#e6e6e6"/>
+  <circle cx="1040" cy="160" r="78"
+          fill="none"
+          stroke="#d4d4d4" stroke-width="3" stroke-opacity="0.6"/>
+  <circle cx="1040" cy="160" r="78"
+          fill="none"
+          stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"
+          transform="rotate(180 1040 160)"/>
+
+  <!-- Center text inside ring: CS Student -->
+  <text x="1040" y="152"
+        text-anchor="middle"
+        fill="#2d2d2d"
+        font-family="Inter, Segoe UI, Arial, sans-serif"
+        font-size="15"
+        font-weight="700"
+        letter-spacing="1.2">
+    CS STUDENT
+  </text>
+  <text x="1040" y="172"
+        text-anchor="middle"
+        fill="#169B66"
+        font-family="Inter, Segoe UI, Arial, sans-serif"
+        font-size="11"
+        font-weight="600"
+        letter-spacing="1.8">
+    &amp; DEVELOPER
+  </text>
+
+  <!-- ══ SPINNING TEXT RING ══ -->
+  <g>
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="rotate"
+      from="0 1040 160"
+      to="360 1040 160"
+      dur="30s"
+      repeatCount="indefinite"/>
+    <svg x="0" y="0" width="1200" height="320">
+      <path id="ringPath"
+        d="M 1040,160 m -128,0 a 128,128 0 1,1 256,0 a 128,128 0 1,1 -256,0"
+        fill="none"/>
+      <!-- Segment 1 -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444" text-transform="uppercase">
+        <textPath href="#ringPath" startOffset="0%">BACKEND</textPath>
+      </text>
+      <!-- Segment 2 -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="22%">AI / ML</textPath>
+      </text>
+      <!-- Segment 3 -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="47%">DATA</textPath>
+      </text>
+      <!-- Segment 4 -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="65%">SYSTEMS</textPath>
+      </text>
+    </svg>
   </g>
+
+  <!-- ══ ACCENT DECORATIVE WAVE (subtle, lower right area) ══ -->
+  <path d="M880 240 C920 210, 960 260, 1000 235 C1040 210, 1070 245, 1110 228 C1140 215, 1170 222, 1200 218"
+        stroke="#169B66" stroke-width="1.4" opacity="0.28" fill="none"/>
+  <path d="M880 255 C925 230, 965 272, 1008 250 C1048 230, 1075 260, 1115 244 C1145 232, 1175 238, 1200 234"
+        stroke="#169B66" stroke-width="0.8" opacity="0.15" fill="none"/>
+
+  <!-- ══ SCAN LINE ══ -->
+  <rect x="-300" y="0" width="300" height="320" rx="4" fill="url(#scanGrad)" opacity="0.8">
+    <animate attributeName="x" from="-300" to="1200" dur="5s" repeatCount="indefinite"/>
+  </rect>
 </svg>
