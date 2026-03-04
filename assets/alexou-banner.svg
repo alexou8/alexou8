@@ -114,34 +114,22 @@
 
   <!-- ══ CIRCULAR NEUMORPHIC ELEMENT — unified colour + glow shadow ══ -->
   <g filter="url(#circleShadow)">
-    <!-- Outer circle — single unified fill -->
     <circle cx="1040" cy="160" r="138" fill="#e6e6e6"/>
-
-    <!-- Inner groove ring -->
     <circle cx="1040" cy="160" r="106" fill="#e6e6e6"/>
-
-    <!-- Innermost face -->
     <circle cx="1040" cy="160" r="78" fill="#e6e6e6"/>
   </g>
 
-  <!-- Subtle edge definition (keeps depth without colour variation) -->
-  <!-- Outer ring dark edge -->
+  <!-- Subtle edge definition -->
   <circle cx="1040" cy="160" r="138"
           fill="none" stroke="#bebebe" stroke-width="1.5" stroke-opacity="0.45"/>
-  <!-- Outer ring light highlight -->
   <circle cx="1040" cy="160" r="138"
           fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85"
           transform="rotate(180 1040 160)"/>
-
-  <!-- Inner groove dark edge -->
   <circle cx="1040" cy="160" r="106"
           fill="none" stroke="#bebebe" stroke-width="1.2" stroke-opacity="0.4"/>
-  <!-- Inner groove light highlight -->
   <circle cx="1040" cy="160" r="106"
           fill="none" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.8"
           transform="rotate(180 1040 160)"/>
-
-  <!-- Face circle edge -->
   <circle cx="1040" cy="160" r="78"
           fill="none" stroke="#d0d0d0" stroke-width="1" stroke-opacity="0.5"/>
   <circle cx="1040" cy="160" r="78"
@@ -164,7 +152,7 @@
     &amp; DEVELOPER
   </text>
 
-  <!-- ══ SPINNING TEXT RING ══ -->
+  <!-- ══ SPINNING TEXT RING — 5 segments ══ -->
   <g>
     <animateTransform
       attributeName="transform" attributeType="XML"
@@ -175,21 +163,30 @@
       <path id="ringPath"
         d="M 1040,160 m -128,0 a 128,128 0 1,1 256,0 a 128,128 0 1,1 -256,0"
         fill="none"/>
+      <!-- Segment 1: FULL-STACK -->
       <text font-family="Inter, Segoe UI, Arial, sans-serif"
             font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
-        <textPath href="#ringPath" startOffset="0%">BACKEND</textPath>
+        <textPath href="#ringPath" startOffset="0%">FULL-STACK</textPath>
       </text>
+      <!-- Segment 2: AI / ML -->
       <text font-family="Inter, Segoe UI, Arial, sans-serif"
             font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
-        <textPath href="#ringPath" startOffset="22%">AI / ML</textPath>
+        <textPath href="#ringPath" startOffset="20%">AI / ML</textPath>
       </text>
+      <!-- Segment 3: DATA -->
       <text font-family="Inter, Segoe UI, Arial, sans-serif"
             font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
-        <textPath href="#ringPath" startOffset="47%">DATA</textPath>
+        <textPath href="#ringPath" startOffset="42%">DATA</textPath>
       </text>
+      <!-- Segment 4: SYSTEMS -->
       <text font-family="Inter, Segoe UI, Arial, sans-serif"
             font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
-        <textPath href="#ringPath" startOffset="65%">SYSTEMS</textPath>
+        <textPath href="#ringPath" startOffset="58%">SYSTEMS</textPath>
+      </text>
+      <!-- Segment 5: SOFTWARE -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="78%">SOFTWARE</textPath>
       </text>
     </svg>
   </g>
