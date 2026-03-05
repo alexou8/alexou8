@@ -70,38 +70,6 @@ I enjoy building **end-to-end solutions** — from system design and REST APIs t
 
 ---
 
-## Featured Projects
-
-### 🩺 [DiaLog — Automated Diabetes Health Tracking & Data Platform](https://github.com/alexou8/DiaLog)
-A data-quality and ML platform for glucose monitoring. Designed data-cleaning workflows, built time-series anomaly detection pipelines (ROC-AUC 0.72–0.78), and implemented a full CI/CD test suite (32+ tests across Python 3.9–3.11).  
-**Tech:** Python · Pandas · SQL/PostgreSQL · FastAPI · Scikit-learn · ML Pipelines · GitHub Actions
-
----
-
-### 🚗 [FareShare — Ride-Sharing Platform](https://github.com/alexou8/FareShare)
-Full-stack ride-sharing web app with service-oriented REST APIs, strict input validation, optimized SQL schemas, and automated data-quality checks (nulls, duplicates, referential integrity).  
-**Tech:** FastAPI · PostgreSQL · SQLAlchemy · React · TypeScript · REST APIs
-
----
-
-### 🗺️ [RouteSense — Traffic-Aware Route Optimization](https://github.com/alexou8/RouteSense)
-Traffic-aware delivery route optimizer with time-window constraints and rolling re-planning for last-mile logistics. Implements Greedy, Hill Climbing, and Simulated Annealing algorithms with an interactive web visualizer.  
-**Tech:** Python · Simulated Annealing · Vanilla JS · HTML5 Canvas · GitHub Pages
-
----
-
-### 🌐 Client-Server Networking Application
-Multithreaded Python TCP client-server with structured logging, robust error handling, request validation, timeouts, and fault-diagnosis logs to support production-like concurrent workloads.  
-**Tech:** Python · TCP Sockets · Multithreading · CLI Applications
-
----
-
-### 📊 [Grade Analytics Toolkit](https://github.com/alexou8/grade-analytics-toolkit)
-Excel/VBA analytics tool that connects to a Microsoft Access database, computes descriptive statistics, generates histograms, and exports formatted Word reports via a custom ribbon UI.  
-**Tech:** Excel VBA · Microsoft Access · Office Automation
-
----
-
 ## Additional Information
 
 ### Languages
