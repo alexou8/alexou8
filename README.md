@@ -14,14 +14,9 @@ Status: **In progress** · Preview: **https://alexou.ca/**
 
 ## About Me
 
-Hi, I'm **Zi Feng (Alex) Ou** — a Computer Science student at **Wilfrid Laurier University** (Waterloo Campus) with strong interests in **backend systems, data engineering, and applied AI/ML**.
+Hi, I'm **Alex Ou** — a Computer Science student with strong interests in **backend systems, data engineering, and applied AI/ML**.
 
 I enjoy building **end-to-end solutions** — from system design and REST APIs to data pipelines and intelligent features — with a focus on **reliability, scalability, and real-world impact**.
-
-- 🎓 BSc Computer Science, Fall 2022 – Present
-- 💼 IoT Software Developer Intern @ Guangzhou Mingliang Energy Saving Technology (Summer 2024)
-- 🏫 Member of **Laurier Computing Society** (Fall 2024 – Present)
-- 🌐 Portfolio: [alexou.ca](https://alexou.ca/) · LinkedIn: [in/alexou](https://linkedin.com/in/alexou) · GitHub: [github.com/alexou8](https://github.com/alexou8)
 
 ---
 
