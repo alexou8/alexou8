@@ -1,0 +1,52 @@
+name: Refresh profile README
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Runs every day at 04:00 UTC so the card stays up to date.
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: "requirements.txt"
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Regenerate SVG profile cards
+        env:
+          # Prefer a fine-grained PAT stored as ACCESS_TOKEN; fall back to the
+          # built-in GITHUB_TOKEN (which satisfies read-only needs for public data).
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || github.token }}
+          USER_NAME: ${{ secrets.USER_NAME || github.repository_owner }}
+        run: python generate_svg.py
+
+      - name: Commit updated SVGs
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          # The cache/ directory is intentionally committed so that LOC statistics
+          # accumulated across previous API calls are preserved between workflow runs,
+          # keeping the script within GitHub's rate limits on subsequent executions.
+          git add dark_mode.svg light_mode.svg cache/
+          git diff --cached --quiet || git commit -m "chore: refresh profile SVGs [skip ci]"
+          git push
