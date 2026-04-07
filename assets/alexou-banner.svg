@@ -1,0 +1,204 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient: light neumorphic -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8eaed"/>
+      <stop offset="50%" stop-color="#e6e6e6"/>
+      <stop offset="100%" stop-color="#dfe1e4"/>
+    </linearGradient>
+
+    <!-- Green accent gradient -->
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#169B66"/>
+      <stop offset="100%" stop-color="#0F6B4A"/>
+    </linearGradient>
+
+    <!-- Name glow filter -->
+    <filter id="nameGlow" x="-10%" y="-30%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#169B66" flood-opacity="0.22"/>
+    </filter>
+
+    <!-- Soft outer glow around the entire circle group -->
+    <filter id="circleGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.85" result="white"/>
+      <feComposite in="white" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft drop shadow for circle lift -->
+    <filter id="circleShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="10" dy="10" stdDeviation="14" flood-color="#bebebe" flood-opacity="0.65"/>
+      <feDropShadow dx="-10" dy="-10" stdDeviation="14" flood-color="#ffffff" flood-opacity="0.95"/>
+    </filter>
+
+    <!-- Scan line gradient -->
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#169B66" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#169B66" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#169B66" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Soft dot pattern -->
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#c8cacc" opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <!-- ══ BACKGROUND ══ -->
+  <rect width="1200" height="320" rx="24" fill="url(#bgGrad)"/>
+  <rect width="1200" height="320" rx="24" fill="url(#dots)"/>
+
+  <!-- ══ OUTER BORDER ══ -->
+  <rect x="2" y="2" width="1196" height="316" rx="23"
+        stroke="#ffffff" stroke-opacity="0.90" stroke-width="1.5" fill="none"/>
+  <rect x="3" y="3" width="1194" height="314" rx="22"
+        stroke="#bebebe" stroke-opacity="0.55" stroke-width="1" fill="none"/>
+
+  <!-- ══ LEFT ACCENT BAR ══ -->
+  <rect x="60" y="56" width="7" height="208" rx="3.5" fill="url(#accentGrad)" opacity="0.9">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ══ GITHUB PROFILE BADGE ══ -->
+  <g transform="translate(82,62)">
+    <rect x="0" y="0" width="168" height="34" rx="17"
+          fill="#e6e6e6" stroke="#d0d0d0" stroke-width="1"/>
+    <rect x="0.5" y="0.5" width="167" height="33" rx="16.5"
+          stroke="#ffffff" stroke-opacity="0.80" stroke-width="1" fill="none"/>
+    <circle cx="18" cy="17" r="5" fill="#169B66">
+      <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="32" y="22"
+          fill="#3a3a3a"
+          font-family="Segoe UI, Inter, Arial, sans-serif"
+          font-size="12.5" font-weight="600" letter-spacing="1.4">
+      GITHUB PROFILE
+    </text>
+  </g>
+
+  <!-- ══ NAME ══ -->
+  <g filter="url(#nameGlow)">
+    <text x="82" y="188"
+          fill="#1a1a1a"
+          font-family="Inter, Segoe UI, Arial, sans-serif"
+          font-size="82" font-weight="800" letter-spacing="1.0">
+      Alex Ou
+    </text>
+  </g>
+
+  <!-- ══ SUBTITLE ══ -->
+  <text x="85" y="228"
+        fill="#4a5568"
+        font-family="Inter, Segoe UI, Arial, sans-serif"
+        font-size="21" font-weight="500" letter-spacing="0.6">
+    Software  •  AI  •  ML  •  Data  •  Systems
+  </text>
+
+  <!-- ══ TAGLINE ══ -->
+  <text x="85" y="268"
+        fill="#888e96"
+        font-family="Consolas, Menlo, monospace"
+        font-size="13.5" letter-spacing="0.5">
+    Building clean, reliable, and design-forward software
+  </text>
+
+  <!-- ══ DIVIDER ══ -->
+  <line x1="862" y1="48" x2="862" y2="272"
+        stroke="#cccccc" stroke-width="1" opacity="0.7"/>
+  <line x1="863" y1="48" x2="863" y2="272"
+        stroke="#ffffff" stroke-opacity="0.8"/>
+
+  <!-- ══ CIRCULAR NEUMORPHIC ELEMENT — unified colour + glow shadow ══ -->
+  <g filter="url(#circleShadow)">
+    <circle cx="1040" cy="160" r="138" fill="#e6e6e6"/>
+    <circle cx="1040" cy="160" r="106" fill="#e6e6e6"/>
+    <circle cx="1040" cy="160" r="78" fill="#e6e6e6"/>
+  </g>
+
+  <!-- Subtle edge definition -->
+  <circle cx="1040" cy="160" r="138"
+          fill="none" stroke="#bebebe" stroke-width="1.5" stroke-opacity="0.45"/>
+  <circle cx="1040" cy="160" r="138"
+          fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85"
+          transform="rotate(180 1040 160)"/>
+  <circle cx="1040" cy="160" r="106"
+          fill="none" stroke="#bebebe" stroke-width="1.2" stroke-opacity="0.4"/>
+  <circle cx="1040" cy="160" r="106"
+          fill="none" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.8"
+          transform="rotate(180 1040 160)"/>
+  <circle cx="1040" cy="160" r="78"
+          fill="none" stroke="#d0d0d0" stroke-width="1" stroke-opacity="0.5"/>
+  <circle cx="1040" cy="160" r="78"
+          fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.75"
+          transform="rotate(180 1040 160)"/>
+
+  <!-- Center text -->
+  <text x="1040" y="152"
+        text-anchor="middle"
+        fill="#2d2d2d"
+        font-family="Inter, Segoe UI, Arial, sans-serif"
+        font-size="15" font-weight="700" letter-spacing="1.2">
+    CS STUDENT
+  </text>
+  <text x="1040" y="172"
+        text-anchor="middle"
+        fill="#169B66"
+        font-family="Inter, Segoe UI, Arial, sans-serif"
+        font-size="11" font-weight="600" letter-spacing="1.8">
+    &amp; DEVELOPER
+  </text>
+
+  <!-- ══ SPINNING TEXT RING — 5 segments ══ -->
+  <g>
+    <animateTransform
+      attributeName="transform" attributeType="XML"
+      type="rotate"
+      from="0 1040 160" to="360 1040 160"
+      dur="30s" repeatCount="indefinite"/>
+    <svg x="0" y="0" width="1200" height="320">
+      <path id="ringPath"
+        d="M 1040,160 m -128,0 a 128,128 0 1,1 256,0 a 128,128 0 1,1 -256,0"
+        fill="none"/>
+      <!-- Segment 1: FULL-STACK -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="0%">FULL-STACK</textPath>
+      </text>
+      <!-- Segment 2: AI / ML -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="20%">AI / ML</textPath>
+      </text>
+      <!-- Segment 3: DATA -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="42%">DATA</textPath>
+      </text>
+      <!-- Segment 4: SYSTEMS -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="58%">SYSTEMS</textPath>
+      </text>
+      <!-- Segment 5: SOFTWARE -->
+      <text font-family="Inter, Segoe UI, Arial, sans-serif"
+            font-size="11.5" font-weight="700" letter-spacing="3" fill="#444444">
+        <textPath href="#ringPath" startOffset="78%">SOFTWARE</textPath>
+      </text>
+    </svg>
+  </g>
+
+  <!-- ══ ACCENT WAVES ══ -->
+  <path d="M880 240 C920 210, 960 260, 1000 235 C1040 210, 1070 245, 1110 228 C1140 215, 1170 222, 1200 218"
+        stroke="#169B66" stroke-width="1.4" opacity="0.28" fill="none"/>
+  <path d="M880 255 C925 230, 965 272, 1008 250 C1048 230, 1075 260, 1115 244 C1145 232, 1175 238, 1200 234"
+        stroke="#169B66" stroke-width="0.8" opacity="0.15" fill="none"/>
+
+  <!-- ══ SCAN LINE ══ -->
+  <rect x="-300" y="0" width="300" height="320" rx="4" fill="url(#scanGrad)" opacity="0.8">
+    <animate attributeName="x" from="-300" to="1200" dur="5s" repeatCount="indefinite"/>
+  </rect>
+</svg>
