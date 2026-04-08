@@ -21,12 +21,12 @@ text, tspan {white-space: pre;}
 <tspan x="15" y="50" class="cc">. </tspan><tspan class="key">University</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">Wilfrid Laurier University</tspan>
 <tspan x="15" y="70" class="cc">. </tspan><tspan class="key">Dev Age</tspan>:<tspan class="cc" id="age_data_dots"> ....................... </tspan><tspan class="value" id="age_data">4 years, 7 months, 7 days</tspan>
 <tspan x="15" y="90" class="cc">. </tspan><tspan class="key">Major</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">Computer Science (BCS)</tspan>
-<tspan x="15" y="110" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ...................... </tspan><tspan class="value">Waterloo, Ontario, Canada</tspan>
-<tspan x="15" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ...................................... </tspan><tspan class="value">VSCode, PyCharm</tspan>
+<tspan x="15" y="110" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">Toronto, ON, Canada</tspan>
+<tspan x="15" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> .............................................. </tspan><tspan class="value">VSCode</tspan>
 <tspan x="15" y="150" class="cc">. </tspan>
 <tspan x="15" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">Python, TypeScript, Java, C</tspan>
 <tspan x="15" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Frameworks</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">FastAPI, React, TensorFlow</tspan>
-<tspan x="15" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Natural</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">English, French</tspan>
+<tspan x="15" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Natural</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">English, Cantonese, Mandarin</tspan>
 <tspan x="15" y="230" class="cc">. </tspan>
 <tspan x="15" y="250" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Backend</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">APIs, Data Pipelines, ML Systems</tspan>
 <tspan x="15" y="270" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Learning</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">System Design, Algorithms, Math</tspan>
