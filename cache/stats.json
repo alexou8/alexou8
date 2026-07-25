@@ -1,16 +1,77 @@
 {
-  "commits": 238,
-  "contributed": 2,
-  "contributions_total": null,
-  "current_streak": null,
+  "activity_source": "contributions",
+  "commits": 50900,
+  "contributed": 4,
+  "contributions_total": 29096,
+  "current_streak": 7,
   "followers": 2,
-  "forks": null,
-  "generated_at": "2026-07-22 06:21 UTC",
-  "languages": [],
-  "loc_added": 65373,
-  "loc_deleted": 4950,
-  "longest_streak": null,
-  "repos": 12,
+  "forks": 3,
+  "generated_at": "2026-07-25 15:59 UTC",
+  "languages": [
+    [
+      "Python",
+      4028946
+    ],
+    [
+      "HTML",
+      2423845
+    ],
+    [
+      "TypeScript",
+      1153186
+    ],
+    [
+      "JavaScript",
+      1123618
+    ],
+    [
+      "CSS",
+      621812
+    ],
+    [
+      "Java",
+      251274
+    ],
+    [
+      "Other",
+      42422
+    ]
+  ],
+  "loc_added": 390998,
+  "loc_deleted": 33769,
+  "longest_streak": 272,
+  "repos": 19,
   "stars": 0,
-  "weeks": []
+  "weeks": [
+    827,
+    808,
+    771,
+    705,
+    714,
+    683,
+    631,
+    468,
+    496,
+    343,
+    236,
+    195,
+    175,
+    123,
+    62,
+    22,
+    2,
+    4,
+    9,
+    14,
+    0,
+    0,
+    35,
+    24,
+    46,
+    15,
+    23,
+    118,
+    52,
+    42
+  ]
 }
