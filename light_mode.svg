@@ -1,44 +1,93 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="620px" height="530px" font-size="16px">
-<style>
-@font-face {
-src: local('Consolas'), local('Consolas Bold');
-font-family: 'ConsolasFallback';
-font-display: swap;
--webkit-size-adjust: 109%;
-size-adjust: 109%;
-}
-.key {fill: #953800;}
-.value {fill: #0a3069;}
-.addColor {fill: #1a7f37;}
-.delColor {fill: #cf222e;}
-.cc {fill: #c2cfde;}
-text, tspan {white-space: pre;}
-</style>
-<rect width="620px" height="530px" fill="#f6f8fa" rx="15"/>
-<text x="15" y="30" fill="#24292f">
-<tspan x="15" y="30">alexou8@github</tspan> -—————————————————————————————————————————-—-
-<tspan x="15" y="50" class="cc">. </tspan><tspan class="key">University</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">Wilfrid Laurier University</tspan>
-<tspan x="15" y="70" class="cc">. </tspan><tspan class="key">Dev Age</tspan>:<tspan class="cc" id="age_data_dots"> ..................... </tspan><tspan class="value" id="age_data">4 years, 10 months, 21 days</tspan>
-<tspan x="15" y="90" class="cc">. </tspan><tspan class="key">Major</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">Computer Science (BCS)</tspan>
-<tspan x="15" y="110" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">Toronto, ON, Canada</tspan>
-<tspan x="15" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> .............................................. </tspan><tspan class="value">VSCode</tspan>
-<tspan x="15" y="150" class="cc">. </tspan>
-<tspan x="15" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">Python, TypeScript, Java, C</tspan>
-<tspan x="15" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Frameworks</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">FastAPI, React, TensorFlow</tspan>
-<tspan x="15" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Natural</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">English, Cantonese, Mandarin</tspan>
-<tspan x="15" y="230" class="cc">. </tspan>
-<tspan x="15" y="250" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Backend</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">APIs, Data Pipelines, ML Systems</tspan>
-<tspan x="15" y="270" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Learning</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">System Design, Algorithms, Math</tspan>
-<tspan x="15" y="290" class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Other</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">Open Source, Problem Solving</tspan>
-<tspan x="15" y="320">- Contact</tspan> -——————————————————————————————————————————————-—-
-<tspan x="15" y="350" class="cc">. </tspan><tspan class="key">Website</tspan>.<tspan class="key">Portfolio</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">alexou.ca</tspan>
-<tspan x="15" y="370" class="cc">. </tspan><tspan class="key">GitHub</tspan>.<tspan class="key">Profile</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">github.com/alexou8</tspan>
-<tspan x="15" y="390" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>.<tspan class="key">Profile</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">linkedin.com/in/alexou8</tspan>
-<tspan x="15" y="410" class="cc">. </tspan>
-<tspan x="15" y="450">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
-<tspan x="15" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">12</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">2</tspan>}<tspan class="cc" id="repo_stats_gap">  |  </tspan><tspan class="key">Stars</tspan>:<tspan class="cc" id="star_data_dots"> ............. </tspan><tspan class="value" id="star_data">0</tspan>
-<tspan x="15" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc" id="commit_data_dots"> ................... </tspan><tspan class="value" id="commit_data">238</tspan><tspan class="cc" id="commit_stats_gap"> |  </tspan><tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ......... </tspan><tspan class="value" id="follower_data">2</tspan>
-<tspan x="15" y="510" class="cc">. </tspan><tspan class="key">GitHub LOC</tspan>:<tspan class="cc" id="loc_data_dots"> ................... </tspan><tspan class="value" id="loc_data">60,423</tspan> ( <tspan class="addColor">+</tspan><tspan class="addColor" id="loc_add">65.4K</tspan>, <tspan id="loc_del_dots"></tspan><tspan class="delColor">-</tspan><tspan class="delColor" id="loc_del">5K</tspan> )
-</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="566" viewBox="0 0 920 566" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" role="img" aria-label="Alex Ou — GitHub profile summary">
+<rect x="0" y="0" width="920" height="566" fill="#ffffff" rx="16"/>
+<rect x="0" y="0" width="920" height="44" fill="#f6f8fa" rx="16"/>
+<rect x="0" y="28" width="920" height="16" fill="#f6f8fa"/>
+<line x1="0" y1="44" x2="920" y2="44" stroke="#d0d7de" stroke-width="1" opacity="1"/>
+<circle cx="24" cy="22" r="6" fill="#ff5f57" opacity="0.95"/>
+<circle cx="43" cy="22" r="6" fill="#febc2e" opacity="0.95"/>
+<circle cx="62" cy="22" r="6" fill="#28c840" opacity="0.95"/>
+<text x="460" y="26.5" font-size="12.5" fill="#7d8590" text-anchor="middle">alexou8@github: ~/profile</text>
+<rect x="0.5" y="0.5" width="919" height="565" fill="none" rx="16" stroke="#d0d7de"/>
+<linearGradient id="mono-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#169b66"/><stop offset="100%" stop-color="#a9dcc6"/></linearGradient>
+<rect x="32" y="74" width="74" height="74" fill="url(#mono-grad)" rx="20"/>
+<text x="69" y="121" font-size="29" fill="#ffffff" font-weight="700" text-anchor="middle" letter-spacing="1">AO</text>
+<text x="128" y="101" font-size="29" fill="#1f2328" font-weight="700">Alex Ou</text>
+<text x="128" y="124" font-size="13.5" fill="#169b66">Software · AI/ML · Data · Systems</text>
+<text x="128" y="144" font-size="12.5" fill="#7d8590">Building clean, reliable, and design-forward software</text>
+<text x="32" y="182" font-size="11.5" fill="#169b66" font-weight="700" letter-spacing="1.7">WHOAMI</text>
+<line x1="96.63" y1="178" x2="440" y2="178" stroke="#d0d7de" stroke-width="1" opacity="0.85"/>
+<text x="480" y="182" font-size="11.5" fill="#169b66" font-weight="700" letter-spacing="1.7">GITHUB</text>
+<line x1="544.63" y1="178" x2="888" y2="178" stroke="#d0d7de" stroke-width="1" opacity="0.85"/>
+<text x="32" y="208" font-size="13.5" fill="#953800">University</text>
+<text x="440" y="208" font-size="13.5" fill="#0a3069" text-anchor="end">Wilfrid Laurier University</text>
+<line x1="124.03" y1="204" x2="215.13" y2="204" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="32" y="233" font-size="13.5" fill="#953800">Major</text>
+<text x="440" y="233" font-size="13.5" fill="#0a3069" text-anchor="end">Computer Science (BCS)</text>
+<line x1="82.51" y1="229" x2="248.35" y2="229" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="32" y="258" font-size="13.5" fill="#953800">Location</text>
+<text x="440" y="258" font-size="13.5" fill="#0a3069" text-anchor="end">Toronto, ON, Canada</text>
+<line x1="107.42" y1="254" x2="273.25" y2="254" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="32" y="283" font-size="13.5" fill="#953800">Dev age</text>
+<text x="440" y="283" font-size="13.5" fill="#0a3069" text-anchor="end">4 years, 10 months, 21 days</text>
+<line x1="99.12" y1="279" x2="206.83" y2="279" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="32" y="308" font-size="13.5" fill="#953800">Editor</text>
+<text x="440" y="308" font-size="13.5" fill="#0a3069" text-anchor="end">VS Code</text>
+<line x1="90.81" y1="304" x2="372.88" y2="304" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="32" y="333" font-size="13.5" fill="#953800">Speaks</text>
+<text x="440" y="333" font-size="13.5" fill="#0a3069" text-anchor="end">English, Cantonese, Mandarin</text>
+<line x1="90.81" y1="329" x2="198.53" y2="329" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="480" y="208" font-size="13.5" fill="#953800">Repos</text>
+<text x="888" y="208" font-size="13.5" fill="#0a3069" text-anchor="end">12</text>
+<line x1="530.51" y1="204" x2="862.39" y2="204" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="480" y="233" font-size="13.5" fill="#953800">Stars</text>
+<text x="888" y="233" font-size="13.5" fill="#0a3069" text-anchor="end">0</text>
+<line x1="530.51" y1="229" x2="870.7" y2="229" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="480" y="258" font-size="13.5" fill="#953800">Commits</text>
+<text x="888" y="258" font-size="13.5" fill="#0a3069" text-anchor="end">238</text>
+<line x1="547.12" y1="254" x2="854.09" y2="254" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="480" y="283" font-size="13.5" fill="#953800">Followers</text>
+<text x="888" y="283" font-size="13.5" fill="#0a3069" text-anchor="end">2</text>
+<line x1="563.72" y1="279" x2="870.7" y2="279" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="480" y="308" font-size="13.5" fill="#953800">Contributed</text>
+<text x="888" y="308" font-size="13.5" fill="#0a3069" text-anchor="end">2</text>
+<line x1="580.33" y1="304" x2="870.7" y2="304" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="480" y="333" font-size="13.5" fill="#953800">Lines of code</text>
+<text x="888" y="333" font-size="13.5" fill="#0a3069" text-anchor="end"><tspan fill="#0a3069">60,423</tspan><tspan fill="#7d8590">  </tspan><tspan fill="#1a7f37">+65.4K</tspan><tspan fill="#7d8590"> / </tspan><tspan fill="#cf222e">-5K</tspan></text>
+<line x1="596.93" y1="329" x2="712.95" y2="329" stroke="#7d8590" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="32" y="374" font-size="11.5" fill="#169b66" font-weight="700" letter-spacing="1.7">STACK</text>
+<line x1="87.86" y1="370" x2="888" y2="370" stroke="#d0d7de" stroke-width="1" opacity="0.85"/>
+<rect x="32" y="380" width="70.28" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="67.14" y="396.2" font-size="12" fill="#1f2328" text-anchor="middle">Python</text>
+<rect x="110.28" y="380" width="99.8" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="160.18" y="396.2" font-size="12" fill="#1f2328" text-anchor="middle">TypeScript</text>
+<rect x="218.08" y="380" width="99.8" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="267.98" y="396.2" font-size="12" fill="#1f2328" text-anchor="middle">JavaScript</text>
+<rect x="325.88" y="380" width="55.52" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="353.64" y="396.2" font-size="12" fill="#1f2328" text-anchor="middle">Java</text>
+<rect x="389.4" y="380" width="33.38" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="406.09" y="396.2" font-size="12" fill="#1f2328" text-anchor="middle">C</text>
+<rect x="430.78" y="380" width="48.14" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="454.85" y="396.2" font-size="12" fill="#1f2328" text-anchor="middle">SQL</text>
+<rect x="32" y="412" width="77.66" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="70.83" y="428.2" font-size="12" fill="#1f2328" text-anchor="middle">FastAPI</text>
+<rect x="117.66" y="412" width="62.9" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="149.11" y="428.2" font-size="12" fill="#1f2328" text-anchor="middle">React</text>
+<rect x="188.56" y="412" width="99.8" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="238.46" y="428.2" font-size="12" fill="#1f2328" text-anchor="middle">PostgreSQL</text>
+<rect x="296.36" y="412" width="99.8" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="346.26" y="428.2" font-size="12" fill="#1f2328" text-anchor="middle">TensorFlow</text>
+<rect x="404.16" y="412" width="70.28" height="24" fill="#f6f8fa" rx="12" stroke="#d0d7de"/>
+<text x="439.3" y="428.2" font-size="12" fill="#1f2328" text-anchor="middle">Docker</text>
+<text x="32" y="466" font-size="11.5" fill="#169b66" font-weight="700" letter-spacing="1.7">CONTACT</text>
+<line x1="105.41" y1="462" x2="888" y2="462" stroke="#d0d7de" stroke-width="1" opacity="0.85"/>
+<text x="32" y="492" font-size="11.5" fill="#7d8590" letter-spacing="0.8">Portfolio</text>
+<text x="32" y="512" font-size="13.5" fill="#0a3069">alexou.ca</text>
+<text x="317.33" y="492" font-size="11.5" fill="#7d8590" letter-spacing="0.8">GitHub</text>
+<text x="317.33" y="512" font-size="13.5" fill="#0a3069">github.com/alexou8</text>
+<text x="602.67" y="492" font-size="11.5" fill="#7d8590" letter-spacing="0.8">LinkedIn</text>
+<text x="602.67" y="512" font-size="13.5" fill="#0a3069">linkedin.com/in/alexou8</text>
+<line x1="32" y1="526" x2="888" y2="526" stroke="#d0d7de" stroke-width="1" opacity="0.8"/>
+<text x="32" y="548" font-size="11.5" fill="#7d8590">updated 2026-07-22 06:21 UTC</text>
+<text x="888" y="548" font-size="11.5" fill="#7d8590" text-anchor="end">refreshed daily by GitHub Actions</text>
 </svg>
