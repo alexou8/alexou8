@@ -37,12 +37,49 @@ python generate_svg.py --strict    # exit non-zero if anything degraded
 
 ## The ACCESS_TOKEN secret
 
-Set a **fine-grained personal access token** as the repository secret
-`ACCESS_TOKEN`, with read access to:
+The workflow reads a personal access token from the repository secret
+`ACCESS_TOKEN`. Either kind of token works, with one difference between them.
 
-- *Repository permissions* → **Metadata: read** (stars, forks, pushes)
-- *Repository permissions* → **Contents: read** (line-count statistics)
-- *Account permissions* → **Followers: read**
+### Fine-grained token (recommended)
+
+Create at **Settings → Developer settings → Personal access tokens →
+Fine-grained tokens** ([direct link][fine-grained]).
+
+- **Resource owner:** `alexou8`
+- **Repository access:** *All repositories* — "Public repositories" cannot see
+  private repos, and the repo count on the card would drop to the public ones
+- **Repository permissions:** Metadata → *Read-only* (stars, forks, pushes,
+  set automatically) and Contents → *Read-only* (line counts, commit history)
+- **Account permissions:** Followers → *Read-only*
+
+Fine-grained tokens have no permission that grants the GraphQL contribution
+calendar, so the activity strip stays on its commit-history fallback and keeps
+its `commits` label. Everything else on the card is complete.
+
+### Classic token
+
+Create at **Settings → Developer settings → Personal access tokens → Tokens
+(classic)** ([direct link][classic]) with the `repo` and `read:user` scopes.
+
+`read:user` unlocks the real contribution calendar, so the activity strip
+counts pull requests, issues and work in other people's repositories and is
+labelled `activity`. The cost is that `repo` grants read *and write* to every
+repository on the account, which is far more than this workflow needs.
+
+### Storing it
+
+Repository **Settings → Secrets and variables → Actions → New repository
+secret** ([direct link][secret]), named exactly `ACCESS_TOKEN`. If the secret
+already exists, open it and choose *Update* — a secret's value cannot be read
+back, only replaced.
+
+Both kinds of token expire. That is the failure this generator is built to
+survive, not to prevent: when the token lapses the card keeps rendering from
+cache and the run says so, rather than failing.
+
+[fine-grained]: https://github.com/settings/personal-access-tokens/new
+[classic]: https://github.com/settings/tokens/new
+[secret]: https://github.com/alexou8/alexou8/settings/secrets/actions
 
 Without it the workflow falls back to the built-in `GITHUB_TOKEN`. That token
 is scoped to this repository alone, so GitHub answers with
