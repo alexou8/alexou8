@@ -33,6 +33,7 @@ CARRYOVER = (
     "contributions_total",
     "current_streak",
     "longest_streak",
+    "activity_source",
 )
 
 
@@ -59,6 +60,9 @@ class ProfileStats:
     contributions_total: int | None = None
     current_streak: int | None = None
     longest_streak: int | None = None
+    # "contributions" (the full calendar) or "commits" (repository history),
+    # so the card can label the activity strip for what it actually counts.
+    activity_source: str = ""
 
     generated_at: str = ""
 
@@ -90,7 +94,7 @@ class ProfileStats:
 
 
 def _is_empty(value) -> bool:
-    return value is None or (isinstance(value, list) and not value)
+    return value is None or (isinstance(value, (list, str)) and not value)
 
 
 def load_cache(path: Path = STATS_CACHE) -> ProfileStats:

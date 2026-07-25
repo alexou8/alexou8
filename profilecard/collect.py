@@ -45,9 +45,28 @@ def collect(client: GitHubClient) -> ProfileStats:
     for message in messages:
         stats.warn(message)
     if days:
+        stats.activity_source = "contributions"
         stats.weeks = weekly_totals(days)
         stats.contributions_total = total
         stats.current_streak, stats.longest_streak = streaks(days)
+    elif repos:
+        # No calendar access.  Fall back to commit history, which any token
+        # can read for public repositories, so the strip still shows real
+        # activity instead of vanishing.
+        days, commit_total, messages = client.fetch_commit_activity(repos)
+        for message in messages:
+            stats.warn(message)
+        if days:
+            stats.activity_source = "commits"
+            stats.weeks = weekly_totals(days)
+            stats.contributions_total = sum(stats.weeks)
+            stats.current_streak, stats.longest_streak = streaks(days)
+        if stats.commits is None and commit_total:
+            stats.commits = commit_total
+            stats.warn(
+                "commit total counts only the default branches of the "
+                "repositories listed above, not every contribution"
+            )
 
     if repos:
         added, deleted, messages = client.fetch_loc(repos)

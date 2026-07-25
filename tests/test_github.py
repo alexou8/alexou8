@@ -234,6 +234,49 @@ def test_loc_keeps_the_stale_reading_when_a_repository_fails(tmp_path, monkeypat
     assert warnings and "1 repository" in warnings[0]
 
 
+def test_commit_activity_builds_a_gap_free_daily_series():
+    """The activity strip must work on a token with no calendar access."""
+    commits = [
+        {"commit": {"author": {"date": "2026-07-20T10:00:00Z"}}},
+        {"commit": {"author": {"date": "2026-07-20T18:00:00Z"}}},
+        {"commit": {"author": {"date": "2026-07-23T09:00:00Z"}}},
+    ]
+
+    def get(path):
+        if path == "/repos/alexou8/one/commits":
+            return FakeResponse(200, commits)
+        return FakeResponse(200, [])
+
+    client = _client(FakeSession(get=get))
+    series, total, warnings = client.fetch_commit_activity(
+        [{"slug": "alexou8/one"}, {"slug": "alexou8/two"}]
+    )
+
+    assert total == 3
+    assert warnings == []
+    counts = dict(series)
+    assert counts["2026-07-20"] == 2
+    assert counts["2026-07-23"] == 1
+    # Quiet days are present as zeroes, not missing.
+    assert counts["2026-07-21"] == 0
+    dates = [day for day, _ in series]
+    assert dates == sorted(dates) and len(set(dates)) == len(dates)
+
+
+def test_commit_activity_skips_empty_repositories():
+    client = _client(FakeSession(get=lambda path: FakeResponse(409)))
+    series, total, warnings = client.fetch_commit_activity([{"slug": "alexou8/new"}])
+
+    assert series == [] and total is None
+    assert warnings == []  # an empty repo is not a failure
+
+
+def test_commit_activity_reports_unreadable_repositories():
+    client = _client(FakeSession(get=lambda path: FakeResponse(403)))
+    _, _, warnings = client.fetch_commit_activity([{"slug": "alexou8/one"}])
+    assert warnings and "unreadable" in warnings[0]
+
+
 @pytest.mark.parametrize(
     "payload,expected",
     [

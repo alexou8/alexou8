@@ -57,6 +57,23 @@ come from `cache/stats.json`, the card still regenerates, and the run is
 annotated with a warning naming the cause. The card itself also says so, in
 its footer — `N figure(s) served from cache`.
 
+Most of the card survives that fallback on its own, because the public REST
+endpoints stay readable:
+
+| Section | With a PAT | With only `GITHUB_TOKEN` |
+| --- | --- | --- |
+| Stars, forks, repos | GraphQL | REST `/users/:login/repos` |
+| Language bar | GraphQL language bytes | REST `/repos/:slug/languages` |
+| Activity strip | contribution calendar, labelled `activity` | commit history, labelled `commits` |
+| Commits | all-time commit search | default branches of listed repos |
+| Private repositories | included | not visible |
+
+The activity strip changes meaning between those two rows, so it changes its
+label with it: the calendar counts pull requests, issues and work in other
+people's repositories, while the commit fallback counts only commits on the
+default branches of the repositories listed. The card never presents one as
+the other.
+
 That fallback is the safety net, not the plan. Fine-grained tokens expire, so
 when the card stops moving, check the workflow annotations first: an expired
 `ACCESS_TOKEN` is the most likely reason.

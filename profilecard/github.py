@@ -17,6 +17,7 @@ for a missing metric; only a completely unusable token is fatal.
 
 from __future__ import annotations
 
+import datetime
 import json
 import time
 from pathlib import Path
@@ -347,9 +348,12 @@ class GitHubClient:
         if resp.status_code != 200:
             return None, [f"commit search returned HTTP {resp.status_code}"]
         try:
-            return resp.json().get("total_count"), []
+            body = resp.json()
         except ValueError:
             return None, ["commit search response was not JSON"]
+        if not isinstance(body, dict):
+            return None, ["commit search returned an unexpected shape"]
+        return body.get("total_count"), []
 
     def fetch_contribution_calendar(self) -> tuple[list, int | None, list]:
         """Return (daily_counts, total, warnings) for the trailing year."""
@@ -379,6 +383,75 @@ class GitHubClient:
                 days.append((day.get("date", ""), day.get("contributionCount", 0)))
         days.sort(key=lambda pair: pair[0])
         return days, calendar.get("totalContributions"), errors
+
+    def fetch_commit_activity(self, repos: list, days: int = 217) -> tuple:
+        """Build a daily commit series from repository history.
+
+        The contribution calendar and the commit search API both need a
+        user-scoped token.  This walks `/repos/{slug}/commits` instead, which
+        any token can read for a public repository, so the activity strip
+        still has something real to draw when only GITHUB_TOKEN is available.
+
+        It counts commits this user authored on the default branch of the
+        repositories listed — narrower than the contribution graph, which
+        also covers pull requests, issues and other people's repositories.
+
+        Returns (daily_counts, total, warnings).
+        """
+        since = (
+            datetime.datetime.now(datetime.timezone.utc)
+            - datetime.timedelta(days=days)
+        ).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        per_day: dict = {}
+        total = 0
+        warnings: list = []
+        failures = 0
+
+        for repo in repos:
+            page = 1
+            while page <= 5:
+                status, body = self.rest(
+                    f"/repos/{repo['slug']}/commits",
+                    author=self.login,
+                    since=since,
+                    per_page=100,
+                    page=page,
+                )
+                if status == 409:  # empty repository
+                    break
+                if status != 200 or not isinstance(body, list):
+                    failures += 1
+                    break
+                for commit in body:
+                    stamp = (
+                        ((commit.get("commit") or {}).get("author") or {}).get("date")
+                        or ""
+                    )
+                    if not stamp:
+                        continue
+                    day = stamp[:10]
+                    per_day[day] = per_day.get(day, 0) + 1
+                    total += 1
+                if len(body) < 100:
+                    break
+                page += 1
+
+        if failures:
+            warnings.append(f"commit history unreadable for {failures} repositories")
+        if not per_day:
+            return [], None, warnings
+
+        # Fill the gaps so weeks with no commits still occupy a slot.
+        start = datetime.date.fromisoformat(min(per_day))
+        end = datetime.datetime.now(datetime.timezone.utc).date()
+        series = []
+        cursor = start
+        while cursor <= end:
+            key = cursor.isoformat()
+            series.append((key, per_day.get(key, 0)))
+            cursor += datetime.timedelta(days=1)
+        return series, total, warnings
 
     # ── lines of code ────────────────────────────────────────────────────
 

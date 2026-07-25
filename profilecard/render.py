@@ -442,7 +442,8 @@ def _draw_activity(canvas: Canvas, stats: ProfileStats) -> None:
     theme = canvas.theme
     top = canvas.y
     weeks = stats.weeks
-    canvas.section_label(PAD, top, f"activity · last {len(weeks)} weeks", CONTENT_W)
+    counting = "commits" if stats.activity_source == "commits" else "activity"
+    canvas.section_label(PAD, top, f"{counting} · last {len(weeks)} weeks", CONTENT_W)
 
     y = top + 16
     height = 46
@@ -465,7 +466,12 @@ def _draw_activity(canvas: Canvas, stats: ProfileStats) -> None:
     y = baseline + 22
     caption = []
     if stats.contributions_total is not None:
-        caption.append(f"{stats.contributions_total:,} contributions in the last year")
+        window = (
+            f"commits across {len(weeks)} weeks"
+            if stats.activity_source == "commits"
+            else "contributions in the last year"
+        )
+        caption.append(f"{stats.contributions_total:,} {window}")
     if stats.current_streak is not None:
         streak = f"{stats.current_streak} day streak"
         if stats.longest_streak:

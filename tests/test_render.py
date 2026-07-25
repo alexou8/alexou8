@@ -108,3 +108,20 @@ def test_text_is_xml_escaped():
     svg = render(stats, DARK)
     assert "a &amp; b &lt;c&gt;" in svg
     _parse(svg)
+
+
+def test_activity_strip_is_labelled_for_what_it_counts():
+    calendar = ProfileStats(
+        weeks=[1, 2, 3],
+        contributions_total=600,
+        activity_source="contributions",
+        generated_at="2026-07-25 06:12 UTC",
+    )
+    assert "ACTIVITY · LAST 3 WEEKS" in render(calendar, DARK)
+    assert "600 contributions in the last year" in render(calendar, DARK)
+
+    from dataclasses import replace
+
+    commits = replace(calendar, activity_source="commits", contributions_total=412)
+    assert "COMMITS · LAST 3 WEEKS" in render(commits, DARK)
+    assert "412 commits across 3 weeks" in render(commits, DARK)
