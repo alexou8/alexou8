@@ -30,7 +30,7 @@ CARRYOVER = (
     "loc_deleted",
     "languages",
     "weeks",
-    "contributions_total",
+    "activity_total",
     "current_streak",
     "longest_streak",
     "activity_source",
@@ -57,7 +57,10 @@ class ProfileStats:
 
     # Weekly contribution counts, oldest first.
     weeks: list = field(default_factory=list)
-    contributions_total: int | None = None
+    # Total across the weeks drawn above — not GitHub's year figure, so
+    # the caption on the card can never describe a different window than
+    # the chart it sits under.
+    activity_total: int | None = None
     current_streak: int | None = None
     longest_streak: int | None = None
     # "contributions" (the full calendar) or "commits" (repository history),

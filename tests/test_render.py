@@ -14,7 +14,7 @@ FULL = ProfileStats(
     loc_deleted=4_950,
     languages=[["Python", 600], ["TypeScript", 400]],
     weeks=[1, 0, 9, 4, 12],
-    contributions_total=1204,
+    activity_total=1204,
     current_streak=12,
     longest_streak=31,
     generated_at="2026-07-25 06:12 UTC",
@@ -113,15 +113,33 @@ def test_text_is_xml_escaped():
 def test_activity_strip_is_labelled_for_what_it_counts():
     calendar = ProfileStats(
         weeks=[1, 2, 3],
-        contributions_total=600,
+        activity_total=600,
         activity_source="contributions",
         generated_at="2026-07-25 06:12 UTC",
     )
     assert "ACTIVITY · LAST 3 WEEKS" in render(calendar, DARK)
-    assert "600 contributions in the last year" in render(calendar, DARK)
+    assert "600 contributions in the last 3 weeks" in render(calendar, DARK)
 
     from dataclasses import replace
 
-    commits = replace(calendar, activity_source="commits", contributions_total=412)
+    commits = replace(calendar, activity_source="commits", activity_total=412)
     assert "COMMITS · LAST 3 WEEKS" in render(commits, DARK)
-    assert "412 commits across 3 weeks" in render(commits, DARK)
+    assert "412 commits in the last 3 weeks" in render(commits, DARK)
+
+
+def test_activity_caption_matches_the_window_it_draws():
+    """The caption must never describe a longer window than the chart.
+
+    GitHub reports contributions over a trailing year while the strip draws
+    a shorter window, and quoting the year total under a 30-week chart put
+    two different periods side by side as if they were one figure.
+    """
+    weeks = [827, 808, 771, 14, 0, 35, 42]
+    stats = ProfileStats(
+        weeks=weeks,
+        activity_total=sum(weeks),
+        activity_source="contributions",
+        generated_at="2026-07-25 06:12 UTC",
+    )
+    svg = render(stats, DARK)
+    assert f"{sum(weeks):,} contributions in the last {len(weeks)} weeks" in svg

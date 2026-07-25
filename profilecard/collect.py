@@ -47,7 +47,9 @@ def collect(client: GitHubClient) -> ProfileStats:
     if days:
         stats.activity_source = "contributions"
         stats.weeks = weekly_totals(days)
-        stats.contributions_total = total
+        # GitHub's `total` covers the trailing year; the strip draws a
+        # shorter window, so summing the drawn weeks keeps the two in step.
+        stats.activity_total = sum(stats.weeks)
         stats.current_streak, stats.longest_streak = streaks(days)
     elif repos:
         # No calendar access.  Fall back to commit history, which any token
@@ -59,7 +61,7 @@ def collect(client: GitHubClient) -> ProfileStats:
         if days:
             stats.activity_source = "commits"
             stats.weeks = weekly_totals(days)
-            stats.contributions_total = sum(stats.weeks)
+            stats.activity_total = sum(stats.weeks)
             stats.current_streak, stats.longest_streak = streaks(days)
         if stats.commits is None and commit_total:
             stats.commits = commit_total

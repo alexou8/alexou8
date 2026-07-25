@@ -465,13 +465,11 @@ def _draw_activity(canvas: Canvas, stats: ProfileStats) -> None:
 
     y = baseline + 22
     caption = []
-    if stats.contributions_total is not None:
-        window = (
-            f"commits across {len(weeks)} weeks"
-            if stats.activity_source == "commits"
-            else "contributions in the last year"
+    if stats.activity_total is not None:
+        noun = "commits" if stats.activity_source == "commits" else "contributions"
+        caption.append(
+            f"{stats.activity_total:,} {noun} in the last {len(weeks)} weeks"
         )
-        caption.append(f"{stats.contributions_total:,} {window}")
     if stats.current_streak is not None:
         streak = f"{stats.current_streak} day streak"
         if stats.longest_streak:
