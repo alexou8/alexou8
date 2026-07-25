@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+# The generator is imported as a plain package from the repository root
+# rather than installed, so the root has to be on sys.path.  Without this,
+# `pytest` works only when invoked as `python -m pytest`, which silently
+# prepends the working directory.
+pythonpath = ["."]
+testpaths = ["tests"]
