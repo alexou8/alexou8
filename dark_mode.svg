@@ -29,7 +29,7 @@
 <text x="440" y="258" font-size="13.5" fill="#79c0ff" text-anchor="end">Toronto, ON, Canada</text>
 <line x1="107.42" y1="254" x2="273.25" y2="254" stroke="#6e7681" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="32" y="283" font-size="13.5" fill="#ffa657">Dev age</text>
-<text x="440" y="283" font-size="13.5" fill="#79c0ff" text-anchor="end">4 years, 11 months, 4 days</text>
+<text x="440" y="283" font-size="13.5" fill="#79c0ff" text-anchor="end">4 years, 11 months, 5 days</text>
 <line x1="99.12" y1="279" x2="215.13" y2="279" stroke="#6e7681" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="32" y="308" font-size="13.5" fill="#ffa657">Editor</text>
 <text x="440" y="308" font-size="13.5" fill="#79c0ff" text-anchor="end">VS Code</text>
@@ -44,7 +44,7 @@
 <text x="888" y="233" font-size="13.5" fill="#79c0ff" text-anchor="end">0</text>
 <line x1="530.51" y1="229" x2="870.7" y2="229" stroke="#6e7681" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="480" y="258" font-size="13.5" fill="#ffa657">Commits</text>
-<text x="888" y="258" font-size="13.5" fill="#79c0ff" text-anchor="end">50,915</text>
+<text x="888" y="258" font-size="13.5" fill="#79c0ff" text-anchor="end">50,923</text>
 <line x1="547.12" y1="254" x2="829.18" y2="254" stroke="#6e7681" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="480" y="283" font-size="13.5" fill="#ffa657">Followers</text>
 <text x="888" y="283" font-size="13.5" fill="#79c0ff" text-anchor="end">2</text>
@@ -59,29 +59,29 @@
 <line x1="359.81" y1="370" x2="888" y2="370" stroke="#30363d" stroke-width="1" opacity="0.85"/>
 <clipPath id="lang-clip"><rect x="32" y="394" width="856" height="13" rx="6.5"/></clipPath>
 <g clip-path="url(#lang-clip)">
-<rect x="32" y="394" width="353.61" height="13" fill="#3572A5"/>
-<rect x="385.61" y="394" width="207.77" height="13" fill="#e34c26"/>
-<rect x="593.38" y="394" width="116.21" height="13" fill="#3178c6"/>
-<rect x="709.59" y="394" width="96.9" height="13" fill="#f1e05a"/>
-<rect x="806.49" y="394" width="56.34" height="13" fill="#563d7c"/>
-<rect x="862.83" y="394" width="21.54" height="13" fill="#b07219"/>
-<rect x="884.36" y="394" width="3.64" height="13" fill="#8b949e"/>
+<rect x="32" y="394" width="347.51" height="13" fill="#3572A5"/>
+<rect x="379.51" y="394" width="203.98" height="13" fill="#e34c26"/>
+<rect x="583.49" y="394" width="128.95" height="13" fill="#3178c6"/>
+<rect x="712.44" y="394" width="95.1" height="13" fill="#f1e05a"/>
+<rect x="807.54" y="394" width="55.76" height="13" fill="#563d7c"/>
+<rect x="863.3" y="394" width="21.13" height="13" fill="#b07219"/>
+<rect x="884.43" y="394" width="3.57" height="13" fill="#8b949e"/>
 </g>
 <circle cx="37" cy="427" r="5" fill="#3572A5"/>
 <text x="49" y="431" font-size="12.5" fill="#c9d1d9">Python</text>
-<text x="103.12" y="431" font-size="12.5" fill="#6e7681">41.3%</text>
+<text x="103.12" y="431" font-size="12.5" fill="#6e7681">40.6%</text>
 <circle cx="251" cy="427" r="5" fill="#e34c26"/>
 <text x="263" y="431" font-size="12.5" fill="#c9d1d9">HTML</text>
-<text x="301.75" y="431" font-size="12.5" fill="#6e7681">24.3%</text>
+<text x="301.75" y="431" font-size="12.5" fill="#6e7681">23.8%</text>
 <circle cx="465" cy="427" r="5" fill="#3178c6"/>
 <text x="477" y="431" font-size="12.5" fill="#c9d1d9">TypeScript</text>
-<text x="561.88" y="431" font-size="12.5" fill="#6e7681">13.6%</text>
+<text x="561.88" y="431" font-size="12.5" fill="#6e7681">15.1%</text>
 <circle cx="679" cy="427" r="5" fill="#f1e05a"/>
 <text x="691" y="431" font-size="12.5" fill="#c9d1d9">JavaScript</text>
-<text x="775.88" y="431" font-size="12.5" fill="#6e7681">11.3%</text>
+<text x="775.88" y="431" font-size="12.5" fill="#6e7681">11.1%</text>
 <circle cx="37" cy="449" r="5" fill="#563d7c"/>
 <text x="49" y="453" font-size="12.5" fill="#c9d1d9">CSS</text>
-<text x="80.06" y="453" font-size="12.5" fill="#6e7681">6.6%</text>
+<text x="80.06" y="453" font-size="12.5" fill="#6e7681">6.5%</text>
 <circle cx="251" cy="449" r="5" fill="#b07219"/>
 <text x="263" y="453" font-size="12.5" fill="#c9d1d9">Java</text>
 <text x="301.75" y="453" font-size="12.5" fill="#6e7681">2.5%</text>
@@ -101,17 +101,17 @@
 <text x="32" y="521" font-size="11.5" fill="#2ea884" font-weight="700" letter-spacing="1.7">ACTIVITY · LAST 30 WEEKS</text>
 <line x1="254.54" y1="517" x2="888" y2="517" stroke="#30363d" stroke-width="1" opacity="0.85"/>
 <rect x="32" y="537" width="24.67" height="46" fill="#56d4a4" rx="3"/>
-<rect x="60.67" y="540.17" width="24.67" height="42.83" fill="#56d4a4" rx="3"/>
-<rect x="89.33" y="540.47" width="24.67" height="42.53" fill="#56d4a4" rx="3"/>
-<rect x="118" y="541.64" width="24.67" height="41.36" fill="#56d4a4" rx="3"/>
-<rect x="146.67" y="545.93" width="24.67" height="37.07" fill="#56d4a4" rx="3"/>
-<rect x="175.33" y="550.16" width="24.67" height="32.84" fill="#2ea884" rx="3"/>
-<rect x="204" y="556.8" width="24.67" height="26.2" fill="#2ea884" rx="3"/>
-<rect x="232.67" y="556.27" width="24.67" height="26.73" fill="#2ea884" rx="3"/>
-<rect x="261.33" y="567.37" width="24.67" height="15.63" fill="#1f6f4a" rx="3"/>
-<rect x="290" y="570.84" width="24.67" height="12.16" fill="#1f6f4a" rx="3"/>
-<rect x="318.67" y="572.25" width="24.67" height="10.75" fill="#1b3a2c" rx="3"/>
-<rect x="347.33" y="572.6" width="24.67" height="10.4" fill="#1b3a2c" rx="3"/>
+<rect x="60.67" y="537.91" width="24.67" height="45.09" fill="#56d4a4" rx="3"/>
+<rect x="89.33" y="539.55" width="24.67" height="43.45" fill="#56d4a4" rx="3"/>
+<rect x="118" y="541.92" width="24.67" height="41.08" fill="#56d4a4" rx="3"/>
+<rect x="146.67" y="544.83" width="24.67" height="38.17" fill="#56d4a4" rx="3"/>
+<rect x="175.33" y="549.5" width="24.67" height="33.5" fill="#2ea884" rx="3"/>
+<rect x="204" y="556.48" width="24.67" height="26.52" fill="#2ea884" rx="3"/>
+<rect x="232.67" y="556.54" width="24.67" height="26.46" fill="#2ea884" rx="3"/>
+<rect x="261.33" y="567.28" width="24.67" height="15.72" fill="#1f6f4a" rx="3"/>
+<rect x="290" y="570.86" width="24.67" height="12.14" fill="#1f6f4a" rx="3"/>
+<rect x="318.67" y="572.62" width="24.67" height="10.38" fill="#1b3a2c" rx="3"/>
+<rect x="347.33" y="572.44" width="24.67" height="10.56" fill="#1b3a2c" rx="3"/>
 <rect x="376" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
 <rect x="404.67" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
 <rect x="433.33" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
@@ -125,12 +125,12 @@
 <rect x="662.67" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
 <rect x="691.33" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
 <rect x="720" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
-<rect x="748.67" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
-<rect x="777.33" y="577.18" width="24.67" height="5.82" fill="#1b3a2c" rx="3"/>
+<rect x="748.67" y="577.72" width="24.67" height="5.28" fill="#1b3a2c" rx="3"/>
+<rect x="777.33" y="577.66" width="24.67" height="5.34" fill="#1b3a2c" rx="3"/>
 <rect x="806" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
 <rect x="834.67" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
 <rect x="863.33" y="578" width="24.67" height="5" fill="#1b3a2c" rx="3"/>
-<text x="32" y="605" font-size="12.5" fill="#6e7681">27,249 contributions in the last year  ·  0 day streak (best 258)</text>
+<text x="32" y="605" font-size="12.5" fill="#6e7681">27,274 contributions in the last year  ·  2 day streak (best 258)</text>
 <text x="32" y="635" font-size="11.5" fill="#2ea884" font-weight="700" letter-spacing="1.7">CONTACT</text>
 <line x1="105.41" y1="631" x2="888" y2="631" stroke="#30363d" stroke-width="1" opacity="0.85"/>
 <text x="32" y="661" font-size="11.5" fill="#6e7681" letter-spacing="0.8">Portfolio</text>
@@ -140,6 +140,6 @@
 <text x="602.67" y="661" font-size="11.5" fill="#6e7681" letter-spacing="0.8">LinkedIn</text>
 <text x="602.67" y="681" font-size="13.5" fill="#79c0ff">linkedin.com/in/alexou8</text>
 <line x1="32" y1="695" x2="888" y2="695" stroke="#30363d" stroke-width="1" opacity="0.8"/>
-<text x="32" y="717" font-size="11.5" fill="#6e7681">updated 2026-08-05 06:19 UTC</text>
+<text x="32" y="717" font-size="11.5" fill="#6e7681">updated 2026-08-06 06:22 UTC</text>
 <text x="888" y="717" font-size="11.5" fill="#6e7681" text-anchor="end">refreshed daily by GitHub Actions</text>
 </svg>
