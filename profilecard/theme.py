@@ -35,19 +35,19 @@ class Theme:
     accent_soft: str  # aurora green, low emphasis
     add: str  # LOC additions
     delete: str  # LOC deletions
-    # Four-step ramp for the contribution sparkline, low → high.  It runs
-    # deep blue → cyan → aurora, which is the column's own gradient.
-    ramp: tuple
-    # Segment colours for the language bar, most-written first.
+    # Four-step ramp for the contribution sparkline, low → high.
     #
-    # These used to be GitHub's own language swatches, which is the correct
-    # default and the wrong one here: eight unrelated hues — Python blue,
-    # HTML orange, JavaScript yellow — are the single loudest thing that can
-    # be put on a page whose whole identity is one cyan and one green.  The
-    # bar reads as proportion, and proportion does not need eight hues; it
-    # needs an ordered ramp, which is also what makes the largest language
-    # legible as the largest.
-    spectrum: tuple
+    # GitHub's own contribution greens, and the language bar keeps GitHub's
+    # linguist swatches, which is the one place the card does not take the
+    # site's palette.  Both are read rather than looked at: a visitor already
+    # knows what Python blue and a dark-green week mean, and recolouring them
+    # to match the plate would cost that recognition for a hue.  The rest of
+    # the card carries the brand; these two carry their meaning.
+    ramp: tuple
+    # The swatch for a week with nothing in it.  It is GitHub's own empty
+    # cell rather than the plate's border, which read as a blue gap in a
+    # green strip.
+    ramp_empty: str
 
     @property
     def is_dark(self) -> bool:
@@ -69,17 +69,8 @@ DARK = Theme(
     accent_soft="#2c6f5f",
     add="#7cf3c4",
     delete="#ff8fa3",
-    ramp=("#12294a", "#1d5675", "#3fb4b8", "#7cf3c4"),
-    spectrum=(
-        "#7cf3c4",
-        "#6fe6ff",
-        "#5aa8e0",
-        "#4a7fc0",
-        "#3d5f9c",
-        "#31477a",
-        "#27365c",
-        "#1e2a45",
-    ),
+    ramp=("#0e4429", "#006d32", "#26a641", "#39d353"),
+    ramp_empty="#151b23",
 )
 
 LIGHT = Theme(
@@ -97,17 +88,8 @@ LIGHT = Theme(
     accent_soft="#9fdcc6",
     add="#0e7f5f",
     delete="#b3243c",
-    ramp=("#d6e6f2", "#8fc3d8", "#3f9f96", "#0e7f5f"),
-    spectrum=(
-        "#0e7f5f",
-        "#1a7fa0",
-        "#3f92c0",
-        "#6aa8d0",
-        "#8fbcdc",
-        "#aecce6",
-        "#c6dcee",
-        "#dbe8f4",
-    ),
+    ramp=("#9be9a8", "#40c463", "#30a14e", "#216e39"),
+    ramp_empty="#ebedf0",
 )
 
 THEMES = {"dark": DARK, "light": LIGHT}

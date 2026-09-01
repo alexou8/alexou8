@@ -18,6 +18,7 @@ from __future__ import annotations
 from xml.sax.saxutils import escape
 
 from . import config, emblem
+from .langcolors import color_for
 from .model import ProfileStats, parse_stamp
 from .theme import Theme
 
@@ -264,11 +265,6 @@ class Canvas:
         return cursor_y + height - y
 
 
-def _swatch(theme: Theme, index: int) -> str:
-    """The language bar's colour for the *index*-th largest language."""
-    return theme.spectrum[min(index, len(theme.spectrum) - 1)]
-
-
 def _n(value) -> str:
     """Format a number for an SVG attribute without trailing zeros."""
     if isinstance(value, float):
@@ -455,7 +451,7 @@ def _draw_stack(canvas: Canvas, stats: ProfileStats) -> None:
             # leaves a sliver of background showing at the right edge.
             is_last = index == len(stats.languages) - 1
             seg_w = (PAD + CONTENT_W) - cursor if is_last else CONTENT_W * size / total
-            canvas.rect(cursor, y, seg_w, bar_h, fill=_swatch(theme, index))
+            canvas.rect(cursor, y, seg_w, bar_h, fill=color_for(name))
             cursor += seg_w
         canvas.add("</g>")
 
@@ -470,7 +466,7 @@ def _draw_stack(canvas: Canvas, stats: ProfileStats) -> None:
             cy = y + row * 22
             canvas.add(
                 f'<circle cx="{_n(cx + 5)}" cy="{_n(cy - 4)}" r="5" '
-                f'fill="{_swatch(theme, index)}"/>'
+                f'fill="{color_for(name)}"/>'
             )
             percent = size / total * 100
             canvas.text(cx + 17, cy, name, size=12.5, fill=theme.text)
@@ -509,7 +505,7 @@ def _draw_activity(canvas: Canvas, stats: ProfileStats) -> None:
     for index, count in enumerate(weeks):
         x = PAD + index * (bar_w + gap)
         if count <= 0:
-            canvas.rect(x, baseline - 3, bar_w, 3, fill=theme.border, rx=EDGE, opacity=0.8)
+            canvas.rect(x, baseline - 3, bar_w, 3, fill=theme.ramp_empty, rx=EDGE)
             continue
         level = min(3, int(count / peak * 4))
         bar_h = max(5.0, height * count / peak)
