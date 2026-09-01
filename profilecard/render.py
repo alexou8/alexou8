@@ -17,14 +17,27 @@ from __future__ import annotations
 
 from xml.sax.saxutils import escape
 
-from . import config
+from . import config, emblem
 from .langcolors import color_for
 from .model import ProfileStats, parse_stamp
 from .theme import Theme
 
+# The portfolio sets its micro-labels and technical copy in Geist Mono and
+# everything editorial in Crimson Pro.  Neither can be *loaded* here: an SVG
+# rendered as an <img> through GitHub's image proxy has no network and no
+# @font-face, so a web font would silently fall back to whatever the viewer's
+# browser picks.  So the card names the families anyway — they resolve for
+# anyone who has them installed — and puts a deliberate stack behind each,
+# chosen so the register survives the fallback: a grotesque-adjacent mono for
+# the data, an old-style serif for the two lines of display type.
 MONO = (
-    "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
+    "'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
     "'Liberation Mono', 'Courier New', monospace"
+)
+
+SERIF = (
+    "'Crimson Pro', 'Iowan Old Style', 'Palatino Linotype', Palatino, "
+    "Georgia, 'Times New Roman', serif"
 )
 
 WIDTH = config.CARD_WIDTH
@@ -34,6 +47,11 @@ CONTENT_W = WIDTH - PAD * 2
 COL_GAP = 40
 COL_W = (CONTENT_W - COL_GAP) // 2
 COL_X = (PAD, PAD + COL_W + COL_GAP)
+
+# One radius for every rectangle, matching the site's `--edge: 2px`.  The
+# card used to be a 16px-rounded macOS terminal window; the portfolio has no
+# rounded anything.
+EDGE = 2
 
 ROW_SIZE = 13.5
 ROW_STEP = 25
@@ -96,9 +114,12 @@ class Canvas:
         anchor: str | None = None,
         tracking: float | None = None,
         opacity: float | None = None,
+        family: str | None = None,
         raw: bool = False,
     ) -> None:
         attrs = [f'x="{_n(x)}"', f'y="{_n(y)}"', f'font-size="{_n(size)}"']
+        if family:
+            attrs.append(f'font-family="{family}"')
         attrs.append(f'fill="{fill or self.theme.text}"')
         if weight:
             attrs.append(f'font-weight="{weight}"')
@@ -229,7 +250,7 @@ class Canvas:
                 chip_w,
                 height,
                 fill=self.theme.panel,
-                rx=12,
+                rx=EDGE,
                 stroke=self.theme.border,
             )
             self.text(
@@ -256,70 +277,99 @@ def _n(value) -> str:
 
 
 def _draw_chrome(canvas: Canvas, height: float) -> None:
+    """The plate the card is drawn on.
+
+    The portfolio does not have windows, cards or panes; it has plates —
+    dark steel laid over a live scene, squared off at 2px, edged in a cyan
+    hairline, with light landing on the top edge and falling away at the
+    bottom.  This draws that, in place of the traffic-light title bar the
+    card used to wear, which belonged to a different profile entirely.
+    """
     theme = canvas.theme
-    canvas.rect(0, 0, WIDTH, height, fill=theme.bg, rx=16)
-    # Title bar: a rounded rect capped by a square one so only the top
-    # corners are rounded.
-    canvas.rect(0, 0, WIDTH, CHROME_H, fill=theme.chrome, rx=16)
-    canvas.rect(0, CHROME_H - 16, WIDTH, 16, fill=theme.chrome)
+    canvas.rect(0, 0, WIDTH, height, fill=theme.bg, rx=EDGE)
+
+    # The header strip, and the sheen under the lit edge: a short vertical
+    # wash as if the surface is catching the column rather than emitting.
+    canvas.add(
+        f'<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0%" stop-color="{theme.lit}" stop-opacity="0.22"/>'
+        f'<stop offset="100%" stop-color="{theme.lit}" stop-opacity="0"/>'
+        f"</linearGradient>"
+    )
+    canvas.rect(0, 0, WIDTH, CHROME_H, fill=theme.chrome, rx=EDGE)
+    canvas.rect(0, 0, WIDTH, 96, fill="url(#sheen)")
     canvas.line(0, CHROME_H, WIDTH, stroke=theme.border)
 
-    for index, color in enumerate(("#ff5f57", "#febc2e", "#28c840")):
-        canvas.add(
-            f'<circle cx="{_n(24 + index * 19)}" cy="{_n(CHROME_H / 2)}" r="6" '
-            f'fill="{color}" opacity="0.95"/>'
-        )
-
-    title = f"{config.LOGIN}@github: {config.WINDOW_TITLE}"
+    # The eyebrow, in the label register: what the card is on the left, where
+    # the rest of it lives on the right.
     canvas.text(
-        WIDTH / 2,
+        PAD,
         CHROME_H / 2 + 4.5,
-        title,
-        size=12.5,
-        fill=theme.muted,
-        anchor="middle",
+        "GITHUB · SIGNAL",
+        size=11,
+        fill=theme.accent,
+        weight="500",
+        tracking=2.2,
     )
+
+    # The bevel: 1px lit along the top edge, 1px of shade at the foot.  Two
+    # lines are the whole difference between a flat rectangle and a plate
+    # with thickness.
+    canvas.line(0, 0.5, WIDTH, stroke=theme.lit, opacity=0.5)
+    canvas.line(0, height - 0.5, WIDTH, stroke="#000000", opacity=0.35)
 
     canvas.rect(
         0.5,
         0.5,
         WIDTH - 1,
         height - 1,
-        rx=16,
+        rx=EDGE,
         stroke=theme.border,
         fill="none",
     )
 
 
 def _draw_identity(canvas: Canvas) -> None:
+    """The mark, the name, and the one line under it.
+
+    The name is set in the display serif rather than the mono the rest of
+    the card is drawn in.  That is the whole hierarchy: one editorial voice
+    at the top, and everything below it in the technical register.
+
+    What stands beside it is the Wings of Freedom, the same emblem the site
+    carries next to its wordmark.  It replaced an "AO" monogram in a
+    gradient-filled rounded tile, which was an app icon, and an app icon for
+    a person is a placeholder wearing a logo's clothes.  It is drawn at a
+    fraction of the ink of the name, in the accent, unboxed — on the site it
+    is dim enough to read as an ornament and lit only on hover, and this is
+    the still version of that.
+    """
     theme = canvas.theme
     top = canvas.y
-    tile = 74
+    mark_h = 66
 
+    x0, y0, glyph_w, glyph_h = emblem.VIEWBOX
+    scale = mark_h / glyph_h
     canvas.add(
-        f'<linearGradient id="mono-grad" x1="0" y1="0" x2="1" y2="1">'
-        f'<stop offset="0%" stop-color="{theme.accent}"/>'
-        f'<stop offset="100%" stop-color="{theme.accent_soft}"/>'
-        f"</linearGradient>"
+        f'<g transform="translate({_n(PAD)} {_n(top)}) scale({scale:.4f}) '
+        f'translate({_n(-x0)} {_n(-y0)})" fill="{theme.accent}" opacity="0.9">'
+        f'<path d="{emblem.PATH}"/></g>'
     )
-    canvas.rect(PAD, top, tile, tile, fill="url(#mono-grad)", rx=20)
+
+    text_x = PAD + glyph_w * scale + 26
     canvas.text(
-        PAD + tile / 2,
-        top + tile / 2 + 10,
-        config.MONOGRAM,
-        size=29,
-        fill="#ffffff" if theme.is_dark else "#ffffff",
+        text_x,
+        top + 30,
+        config.NAME,
+        size=34,
         weight="700",
-        anchor="middle",
-        tracking=1.0,
+        fill=theme.value,
+        tracking=1.5,
+        family=SERIF,
     )
+    canvas.text(text_x, top + 54, config.ROLE, size=13, fill=theme.text, family=SERIF)
 
-    text_x = PAD + tile + 22
-    canvas.text(text_x, top + 27, config.NAME, size=29, weight="700", fill=theme.text)
-    canvas.text(text_x, top + 50, config.ROLE, size=13.5, fill=theme.accent)
-    canvas.text(text_x, top + 70, config.TAGLINE, size=12.5, fill=theme.muted)
-
-    canvas.y = top + tile + 34
+    canvas.y = top + mark_h + 38
 
 
 def _draw_columns(canvas: Canvas, stats: ProfileStats) -> None:
@@ -392,7 +442,7 @@ def _draw_stack(canvas: Canvas, stats: ProfileStats) -> None:
         canvas.add(
             f'<clipPath id="lang-clip">'
             f'<rect x="{_n(PAD)}" y="{_n(y)}" width="{_n(CONTENT_W)}" '
-            f'height="{_n(bar_h)}" rx="{_n(bar_h / 2)}"/></clipPath>'
+            f'height="{_n(bar_h)}" rx="{_n(EDGE)}"/></clipPath>'
         )
         canvas.add('<g clip-path="url(#lang-clip)">')
         cursor = float(PAD)
@@ -455,12 +505,12 @@ def _draw_activity(canvas: Canvas, stats: ProfileStats) -> None:
     for index, count in enumerate(weeks):
         x = PAD + index * (bar_w + gap)
         if count <= 0:
-            canvas.rect(x, baseline - 4, bar_w, 4, fill=theme.border, rx=2, opacity=0.7)
+            canvas.rect(x, baseline - 3, bar_w, 3, fill=theme.ramp_empty, rx=EDGE)
             continue
         level = min(3, int(count / peak * 4))
         bar_h = max(5.0, height * count / peak)
         canvas.rect(
-            x, baseline - bar_h, bar_w, bar_h, fill=theme.ramp[level], rx=min(3, bar_w / 2)
+            x, baseline - bar_h, bar_w, bar_h, fill=theme.ramp[level], rx=EDGE
         )
 
     y = baseline + 22
@@ -490,10 +540,10 @@ def _draw_contact(canvas: Canvas) -> None:
     canvas.section_label(PAD, top, "contact", CONTENT_W)
     y = top + 26
     cell = CONTENT_W / len(config.CONTACT)
-    for index, (label, value, _url) in enumerate(config.CONTACT):
+    for index, (label, value) in enumerate(config.CONTACT):
         x = PAD + index * cell
-        canvas.text(x, y, label, size=11.5, fill=theme.muted, tracking=0.8)
-        canvas.text(x, y + 20, value, size=13.5, fill=theme.value)
+        canvas.text(x, y, label.upper(), size=10.5, fill=theme.muted, tracking=2.0)
+        canvas.text(x, y + 21, value, size=13.5, fill=theme.key)
     canvas.y = y + 48
 
 
@@ -537,7 +587,7 @@ def render(stats: ProfileStats, theme: Theme) -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" '
         f'height="{_n(height)}" viewBox="0 0 {WIDTH} {_n(height)}" '
         f'font-family="{MONO}" role="img" '
-        f'aria-label="{escape(config.NAME)} — GitHub profile summary">\n'
+        f'aria-label="{escape(config.NAME)}, GitHub profile summary">\n'
         f"{body}\n"
         "</svg>\n"
     )
