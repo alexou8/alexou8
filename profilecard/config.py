@@ -12,7 +12,6 @@ LOGIN = "alexou8"
 
 # ── Identity ──────────────────────────────────────────────────────────────
 NAME = "Alex Ou"
-MONOGRAM = "AO"
 ROLE = "Full-stack software engineer · backend services, data pipelines, applied ML"
 
 # When the "Dev age" counter starts: the first term of the CS degree.

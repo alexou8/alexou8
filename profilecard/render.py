@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from xml.sax.saxutils import escape
 
-from . import config
+from . import config, emblem
 from .model import ProfileStats, parse_stamp
 from .theme import Theme
 
@@ -334,34 +334,33 @@ def _draw_chrome(canvas: Canvas, height: float) -> None:
 
 
 def _draw_identity(canvas: Canvas) -> None:
-    """The name, and the two lines under it.
+    """The mark, the name, and the one line under it.
 
     The name is set in the display serif rather than the mono the rest of
     the card is drawn in.  That is the whole hierarchy: one editorial voice
-    at the top, and everything below it in the technical register.  The
-    monogram tile that used to sit beside it was a rounded gradient chip —
-    an app icon — and it is a squared plate now, edged rather than filled,
-    because the site fills nothing.
+    at the top, and everything below it in the technical register.
+
+    What stands beside it is the Wings of Freedom, the same emblem the site
+    carries next to its wordmark.  It replaced an "AO" monogram in a
+    gradient-filled rounded tile, which was an app icon, and an app icon for
+    a person is a placeholder wearing a logo's clothes.  It is drawn at a
+    fraction of the ink of the name, in the accent, unboxed — on the site it
+    is dim enough to read as an ornament and lit only on hover, and this is
+    the still version of that.
     """
     theme = canvas.theme
     top = canvas.y
-    tile = 68
+    mark_h = 66
 
-    canvas.rect(PAD, top, tile, tile, fill=theme.panel, rx=EDGE, stroke=theme.border)
-    canvas.line(PAD, top + 0.5, PAD + tile, stroke=theme.lit, opacity=0.55)
-    canvas.text(
-        PAD + tile / 2,
-        top + tile / 2 + 10,
-        config.MONOGRAM,
-        size=27,
-        fill=theme.accent,
-        weight="700",
-        anchor="middle",
-        tracking=2.5,
-        family=SERIF,
+    x0, y0, glyph_w, glyph_h = emblem.VIEWBOX
+    scale = mark_h / glyph_h
+    canvas.add(
+        f'<g transform="translate({_n(PAD)} {_n(top)}) scale({scale:.4f}) '
+        f'translate({_n(-x0)} {_n(-y0)})" fill="{theme.accent}" opacity="0.9">'
+        f'<path d="{emblem.PATH}"/></g>'
     )
 
-    text_x = PAD + tile + 24
+    text_x = PAD + glyph_w * scale + 26
     canvas.text(
         text_x,
         top + 30,
@@ -374,7 +373,7 @@ def _draw_identity(canvas: Canvas) -> None:
     )
     canvas.text(text_x, top + 54, config.ROLE, size=13, fill=theme.text, family=SERIF)
 
-    canvas.y = top + tile + 36
+    canvas.y = top + mark_h + 38
 
 
 def _draw_columns(canvas: Canvas, stats: ProfileStats) -> None:
