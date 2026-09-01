@@ -13,8 +13,7 @@ LOGIN = "alexou8"
 # ── Identity ──────────────────────────────────────────────────────────────
 NAME = "Alex Ou"
 MONOGRAM = "AO"
-ROLE = "Software engineer — backend services, data pipelines, applied ML"
-TAGLINE = "Open to 2026 roles · Toronto, ON"
+ROLE = "Full-stack software engineer · backend services, data pipelines, applied ML"
 
 # When the "Dev age" counter starts: the first term of the CS degree.
 DEV_SINCE = datetime.date(2021, 9, 1)

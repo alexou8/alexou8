@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="731" viewBox="0 0 920 731" font-family="'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" role="img" aria-label="Alex Ou — GitHub profile summary">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="731" viewBox="0 0 920 731" font-family="'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" role="img" aria-label="Alex Ou, GitHub profile summary">
 <rect x="0" y="0" width="920" height="731" fill="#020813" rx="2"/>
 <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2f5c8a" stop-opacity="0.22"/><stop offset="100%" stop-color="#2f5c8a" stop-opacity="0"/></linearGradient>
 <rect x="0" y="0" width="920" height="44" fill="#06132c" rx="2"/>
 <rect x="0" y="0" width="920" height="96" fill="url(#sheen)"/>
 <line x1="0" y1="44" x2="920" y2="44" stroke="#1c3a63" stroke-width="1" opacity="1"/>
 <text x="32" y="26.5" font-size="11" fill="#7cf3c4" font-weight="500" letter-spacing="2.2">GITHUB · SIGNAL</text>
-<text x="888" y="26.5" font-size="11" fill="#7c9ac0" text-anchor="end" letter-spacing="2.2">ALEXOU.CA</text>
 <line x1="0" y1="0.5" x2="920" y2="0.5" stroke="#2f5c8a" stroke-width="1" opacity="0.5"/>
 <line x1="0" y1="730.5" x2="920" y2="730.5" stroke="#000000" stroke-width="1" opacity="0.35"/>
 <rect x="0.5" y="0.5" width="919" height="730" fill="none" rx="2" stroke="#1c3a63"/>
@@ -14,8 +13,7 @@
 <line x1="32" y1="74.5" x2="100" y2="74.5" stroke="#2f5c8a" stroke-width="1" opacity="0.55"/>
 <text x="66" y="118" font-size="27" font-family="'Crimson Pro', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif" fill="#7cf3c4" font-weight="700" text-anchor="middle" letter-spacing="2.5">AO</text>
 <text x="124" y="104" font-size="34" font-family="'Crimson Pro', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif" fill="#f4fcff" font-weight="700" letter-spacing="1.5">Alex Ou</text>
-<text x="124" y="125" font-size="13" font-family="'Crimson Pro', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif" fill="#c5dcf2">Software engineer — backend services, data pipelines, applied ML</text>
-<text x="124" y="144" font-size="10.5" fill="#7cf3c4" letter-spacing="2">OPEN TO 2026 ROLES · TORONTO, ON</text>
+<text x="124" y="128" font-size="13" font-family="'Crimson Pro', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif" fill="#c5dcf2">Full-stack software engineer · backend services, data pipelines, applied ML</text>
 <text x="32" y="178" font-size="11.5" fill="#7cf3c4" font-weight="700" letter-spacing="1.7">WHOAMI</text>
 <line x1="96.63" y1="174" x2="440" y2="174" stroke="#1c3a63" stroke-width="1" opacity="0.85"/>
 <text x="480" y="178" font-size="11.5" fill="#7cf3c4" font-weight="700" letter-spacing="1.7">GITHUB</text>

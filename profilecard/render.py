@@ -315,15 +315,6 @@ def _draw_chrome(canvas: Canvas, height: float) -> None:
         weight="500",
         tracking=2.2,
     )
-    canvas.text(
-        WIDTH - PAD,
-        CHROME_H / 2 + 4.5,
-        "ALEXOU.CA",
-        size=11,
-        fill=theme.muted,
-        anchor="end",
-        tracking=2.2,
-    )
 
     # The bevel: 1px lit along the top edge, 1px of shade at the foot.  Two
     # lines are the whole difference between a flat rectangle and a plate
@@ -381,15 +372,7 @@ def _draw_identity(canvas: Canvas) -> None:
         tracking=1.5,
         family=SERIF,
     )
-    canvas.text(text_x, top + 51, config.ROLE, size=13, fill=theme.text, family=SERIF)
-    canvas.text(
-        text_x,
-        top + 70,
-        config.TAGLINE.upper(),
-        size=10.5,
-        fill=theme.accent,
-        tracking=2.0,
-    )
+    canvas.text(text_x, top + 54, config.ROLE, size=13, fill=theme.text, family=SERIF)
 
     canvas.y = top + tile + 36
 
@@ -609,7 +592,7 @@ def render(stats: ProfileStats, theme: Theme) -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" '
         f'height="{_n(height)}" viewBox="0 0 {WIDTH} {_n(height)}" '
         f'font-family="{MONO}" role="img" '
-        f'aria-label="{escape(config.NAME)} — GitHub profile summary">\n'
+        f'aria-label="{escape(config.NAME)}, GitHub profile summary">\n'
         f"{body}\n"
         "</svg>\n"
     )
