@@ -13,24 +13,23 @@ LOGIN = "alexou8"
 # ── Identity ──────────────────────────────────────────────────────────────
 NAME = "Alex Ou"
 MONOGRAM = "AO"
-ROLE = "Software · AI/ML · Data · Systems"
-TAGLINE = "Building clean, reliable, and design-forward software"
-
-# Shown in the terminal title bar.
-WINDOW_TITLE = "~/profile"
+ROLE = "Software engineer — backend services, data pipelines, applied ML"
+TAGLINE = "Open to 2026 roles · Toronto, ON"
 
 # When the "Dev age" counter starts: the first term of the CS degree.
 DEV_SINCE = datetime.date(2021, 9, 1)
 
-# ── whoami rows ───────────────────────────────────────────────────────────
+# ── Profile rows ──────────────────────────────────────────────────────────
 # (label, value).  The literal "{dev_age}" is substituted at render time.
+#
+# Deliberately short.  The rows that used to be here — editor, languages
+# spoken — are the ones every profile card carries and none of them tell a
+# reader anything about the work.
 WHOAMI = [
-    ("University", "Wilfrid Laurier University"),
-    ("Major", "Computer Science (BCS)"),
-    ("Location", "Toronto, ON, Canada"),
-    ("Dev age", "{dev_age}"),
-    ("Editor", "VS Code"),
-    ("Speaks", "English, Cantonese, Mandarin"),
+    ("School", "Wilfrid Laurier University"),
+    ("Program", "Computer Science (BCS)"),
+    ("Based in", "Toronto, ON"),
+    ("Writing code", "{dev_age}"),
 ]
 
 # ── Declared stack ────────────────────────────────────────────────────────
@@ -63,10 +62,13 @@ LANGUAGE_DENYLIST = {
 LANGUAGE_SLOTS = 6
 
 # ── Contact ───────────────────────────────────────────────────────────────
+# The card is an image, so none of this is clickable; the README carries the
+# real links under it.  These are here because a reader who screenshots the
+# card, or meets it outside GitHub, still needs to know where to go.
 CONTACT = [
-    ("Portfolio", "alexou.ca", "https://alexou.ca"),
-    ("GitHub", "github.com/alexou8", "https://github.com/alexou8"),
-    ("LinkedIn", "linkedin.com/in/alexou8", "https://linkedin.com/in/alexou8"),
+    ("Portfolio", "alexou.ca"),
+    ("GitHub", "github.com/alexou8"),
+    ("LinkedIn", "linkedin.com/in/alexou8"),
 ]
 
 # ── Output ────────────────────────────────────────────────────────────────
