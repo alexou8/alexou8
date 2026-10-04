@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 
 from profilecard.model import ProfileStats
 from profilecard.render import render
-from profilecard.theme import DARK, LIGHT, THEMES
+from profilecard.theme import GHOUL, THEMES
 
 FULL = ProfileStats(
     followers=2,
@@ -25,7 +25,7 @@ def _parse(svg):
     return ET.fromstring(svg.split("?>", 1)[1])
 
 
-def test_both_themes_produce_wellformed_svg():
+def test_every_theme_produces_wellformed_svg():
     for theme in THEMES.values():
         root = _parse(render(FULL, theme))
         assert root.tag.endswith("svg")
@@ -33,15 +33,11 @@ def test_both_themes_produce_wellformed_svg():
 
 
 def test_render_is_deterministic():
-    assert render(FULL, DARK) == render(FULL, DARK)
-
-
-def test_themes_differ():
-    assert render(FULL, DARK) != render(FULL, LIGHT)
+    assert render(FULL, GHOUL) == render(FULL, GHOUL)
 
 
 def test_stats_reach_the_card():
-    svg = render(FULL, DARK)
+    svg = render(FULL, GHOUL)
     assert ">238<" in svg  # commits
     assert ">60,423<" in svg  # net lines of code
     assert "1,204 contributions" in svg
@@ -49,33 +45,33 @@ def test_stats_reach_the_card():
 
 
 def test_missing_metrics_render_as_a_dash_not_a_zero():
-    svg = render(ProfileStats(generated_at="2026-07-25 06:12 UTC"), DARK)
+    svg = render(ProfileStats(generated_at="2026-07-25 06:12 UTC"), GHOUL)
     assert ">—<" in svg
     assert ">0<" not in svg
 
 
 def test_empty_stats_still_render():
-    root = _parse(render(ProfileStats(), DARK))
+    root = _parse(render(ProfileStats(), GHOUL))
     assert float(root.get("height")) > 0
 
 
 def test_activity_section_is_dropped_without_data():
-    assert "ACTIVITY" in render(FULL, DARK)
-    assert "ACTIVITY" not in render(ProfileStats(repos=1), DARK)
+    assert "ACTIVITY" in render(FULL, GHOUL)
+    assert "ACTIVITY" not in render(ProfileStats(repos=1), GHOUL)
 
 
 def test_measured_languages_replace_the_declared_stack():
-    with_languages = render(FULL, DARK)
+    with_languages = render(FULL, GHOUL)
     assert "MEASURED ACROSS REPOSITORIES" in with_languages
     assert "60.0%" in with_languages
 
-    without = render(ProfileStats(repos=1), DARK)
+    without = render(ProfileStats(repos=1), GHOUL)
     assert "MEASURED ACROSS REPOSITORIES" not in without
     assert "Python" in without  # declared stack chips
 
 
 def test_language_bar_segments_fill_the_full_width():
-    root = _parse(render(FULL, DARK))
+    root = _parse(render(FULL, GHOUL))
     ns = "{http://www.w3.org/2000/svg}"
     clip = root.find(f".//{ns}clipPath/{ns}rect")
     bar_left = float(clip.get("x"))
@@ -93,19 +89,19 @@ def test_language_bar_segments_fill_the_full_width():
 
 def test_dev_age_counts_from_the_collection_date():
     # Stats collected in 2026 must not silently re-age when re-rendered later.
-    svg = render(FULL, DARK)
+    svg = render(FULL, GHOUL)
     assert "4 years, 10 months, 24 days" in svg
 
 
 def test_stale_metrics_are_disclosed_on_the_card():
     stats = ProfileStats(repos=12, generated_at="2026-07-25 06:12 UTC")
     stats.stale.extend(["stars", "commits"])
-    assert "2 figure(s) served from cache" in render(stats, DARK)
+    assert "2 figure(s) served from cache" in render(stats, GHOUL)
 
 
 def test_text_is_xml_escaped():
     stats = ProfileStats(generated_at="a & b <c>")
-    svg = render(stats, DARK)
+    svg = render(stats, GHOUL)
     assert "a &amp; b &lt;c&gt;" in svg
     _parse(svg)
 
@@ -117,11 +113,11 @@ def test_activity_strip_is_labelled_for_what_it_counts():
         activity_source="contributions",
         generated_at="2026-07-25 06:12 UTC",
     )
-    assert "ACTIVITY · LAST 3 WEEKS" in render(calendar, DARK)
-    assert "600 contributions in the last year" in render(calendar, DARK)
+    assert "ACTIVITY · LAST 3 WEEKS" in render(calendar, GHOUL)
+    assert "600 contributions in the last year" in render(calendar, GHOUL)
 
     from dataclasses import replace
 
     commits = replace(calendar, activity_source="commits", contributions_total=412)
-    assert "COMMITS · LAST 3 WEEKS" in render(commits, DARK)
-    assert "412 commits across 3 weeks" in render(commits, DARK)
+    assert "COMMITS · LAST 3 WEEKS" in render(commits, GHOUL)
+    assert "412 commits across 3 weeks" in render(commits, GHOUL)

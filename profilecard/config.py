@@ -61,8 +61,7 @@ LANGUAGE_SLOTS = 6
 
 # ── Output ────────────────────────────────────────────────────────────────
 OUTPUTS = {
-    "dark": "dark_mode.svg",
-    "light": "light_mode.svg",
+    "ghoul": "profile_card.svg",
 }
 
 CARD_WIDTH = 920

@@ -22,36 +22,35 @@ from .langcolors import color_for
 from .model import ProfileStats, parse_stamp
 from .theme import Theme
 
-# The portfolio sets its micro-labels and technical copy in Geist Mono and
-# everything editorial in Crimson Pro.  Neither can be *loaded* here: an SVG
-# rendered as an <img> through GitHub's image proxy has no network and no
-# @font-face, so a web font would silently fall back to whatever the viewer's
-# browser picks.  So the card names the families anyway — they resolve for
-# anyone who has them installed — and puts a deliberate stack behind each,
-# chosen so the register survives the fallback: a grotesque-adjacent mono for
-# the data, an old-style serif for the two lines of display type.
+# The Ghoul world sets its labels and technical copy in IBM Plex Mono and its
+# display type in a mincho — Shippori for titles, Zen Old for headings.
+# Neither can be *loaded* here: an SVG rendered as an <img> through GitHub's
+# image proxy has no network and no @font-face, so a web font would silently
+# fall back to whatever the viewer's browser picks.  So the card names the
+# families anyway — they resolve for anyone who has them installed — and puts
+# a deliberate stack behind each, chosen so the register survives the
+# fallback: a plain mono for the data, a high-contrast serif for the name.
 MONO = (
-    "'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
+    "'IBM Plex Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, "
     "'Liberation Mono', 'Courier New', monospace"
 )
 
 SERIF = (
-    "'Crimson Pro', 'Iowan Old Style', 'Palatino Linotype', Palatino, "
-    "Georgia, 'Times New Roman', serif"
+    "'Shippori Mincho', 'Zen Old Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', "
+    "'Iowan Old Style', Georgia, 'Times New Roman', serif"
 )
 
 WIDTH = config.CARD_WIDTH
 PAD = 32
-CHROME_H = 44
+TOP_RULE = 3
 CONTENT_W = WIDTH - PAD * 2
 COL_GAP = 40
 COL_W = (CONTENT_W - COL_GAP) // 2
 COL_X = (PAD, PAD + COL_W + COL_GAP)
 
-# One radius for every rectangle, matching the site's `--edge: 2px`.  The
-# card used to be a 16px-rounded macOS terminal window; the portfolio has no
-# rounded anything.
-EDGE = 2
+# One radius for every rectangle, matching the site's `--edge: 0px`.  The
+# portfolio has no rounded anything.
+EDGE = 0
 
 ROW_SIZE = 13.5
 ROW_STEP = 25
@@ -95,7 +94,7 @@ class Canvas:
     def __init__(self, theme: Theme):
         self.theme = theme
         self.parts: list = []
-        self.y = CHROME_H + 30
+        self.y = TOP_RULE + 38
 
     def add(self, markup: str) -> None:
         self.parts.append(markup)
@@ -279,54 +278,26 @@ def _n(value) -> str:
 def _draw_chrome(canvas: Canvas, height: float) -> None:
     """The plate the card is drawn on.
 
-    The portfolio does not have windows, cards or panes; it has plates —
-    dark steel laid over a live scene, squared off at 2px, edged in a cyan
-    hairline, with light landing on the top edge and falling away at the
-    bottom.  This draws that, in place of the traffic-light title bar the
-    card used to wear, which belonged to a different profile entirely.
+    The Ghoul world's plates are opaque paper, squared off, ruled in a
+    hairline, with light landing on the top edge and a breath of shade at
+    the foot.  The one flourish is the site's section rule: a stroke of
+    blood across the top that fades out to the right.
     """
     theme = canvas.theme
-    canvas.rect(0, 0, WIDTH, height, fill=theme.bg, rx=EDGE)
+    canvas.rect(0, 0, WIDTH, height, fill=theme.bg)
+    canvas.rect(
+        0.5, 0.5, WIDTH - 1, height - 1, stroke=theme.border, fill="none"
+    )
+    canvas.line(1, 1.5, WIDTH - 1, stroke=theme.lit, opacity=0.9)
+    canvas.line(0, height - 0.5, WIDTH, stroke=theme.text, opacity=0.12)
 
-    # The header strip, and the sheen under the lit edge: a short vertical
-    # wash as if the surface is catching the column rather than emitting.
     canvas.add(
-        f'<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0%" stop-color="{theme.lit}" stop-opacity="0.22"/>'
-        f'<stop offset="100%" stop-color="{theme.lit}" stop-opacity="0"/>'
+        f'<linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">'
+        f'<stop offset="0%" stop-color="{theme.accent}"/>'
+        f'<stop offset="82%" stop-color="{theme.accent}" stop-opacity="0"/>'
         f"</linearGradient>"
     )
-    canvas.rect(0, 0, WIDTH, CHROME_H, fill=theme.chrome, rx=EDGE)
-    canvas.rect(0, 0, WIDTH, 96, fill="url(#sheen)")
-    canvas.line(0, CHROME_H, WIDTH, stroke=theme.border)
-
-    # The eyebrow, in the label register: what the card is on the left, where
-    # the rest of it lives on the right.
-    canvas.text(
-        PAD,
-        CHROME_H / 2 + 4.5,
-        "GITHUB · SIGNAL",
-        size=11,
-        fill=theme.accent,
-        weight="500",
-        tracking=2.2,
-    )
-
-    # The bevel: 1px lit along the top edge, 1px of shade at the foot.  Two
-    # lines are the whole difference between a flat rectangle and a plate
-    # with thickness.
-    canvas.line(0, 0.5, WIDTH, stroke=theme.lit, opacity=0.5)
-    canvas.line(0, height - 0.5, WIDTH, stroke="#000000", opacity=0.35)
-
-    canvas.rect(
-        0.5,
-        0.5,
-        WIDTH - 1,
-        height - 1,
-        rx=EDGE,
-        stroke=theme.border,
-        fill="none",
-    )
+    canvas.rect(0, 0, WIDTH, TOP_RULE, fill="url(#rule)")
 
 
 def _draw_identity(canvas: Canvas) -> None:
@@ -336,40 +307,33 @@ def _draw_identity(canvas: Canvas) -> None:
     the card is drawn in.  That is the whole hierarchy: one editorial voice
     at the top, and everything below it in the technical register.
 
-    What stands beside it is the Wings of Freedom, the same emblem the site
-    carries next to its wordmark.  It replaced an "AO" monogram in a
-    gradient-filled rounded tile, which was an app icon, and an app icon for
-    a person is a placeholder wearing a logo's clothes.  It is drawn at a
-    fraction of the ink of the name, in the accent, unboxed — on the site it
-    is dim enough to read as an ornament and lit only on hover, and this is
-    the still version of that.
+    Beside it is the red spider lily, the mark the site's Ghoul world
+    carries in its menu and its tab.
     """
     theme = canvas.theme
     top = canvas.y
-    mark_h = 66
+    mark = 58
 
-    x0, y0, glyph_w, glyph_h = emblem.VIEWBOX
-    scale = mark_h / glyph_h
+    scale = mark / emblem.SIZE
     canvas.add(
-        f'<g transform="translate({_n(PAD)} {_n(top)}) scale({scale:.4f}) '
-        f'translate({_n(-x0)} {_n(-y0)})" fill="{theme.accent}" opacity="0.9">'
-        f'<path d="{emblem.PATH}"/></g>'
+        f'<g transform="translate({_n(PAD)} {_n(top)}) scale({scale:.4f})">'
+        f"{emblem.markup(theme.accent, theme.accent_deep)}</g>"
     )
 
-    text_x = PAD + glyph_w * scale + 26
+    text_x = PAD + mark + 22
     canvas.text(
         text_x,
-        top + 30,
+        top + 28,
         config.NAME,
-        size=34,
+        size=32,
         weight="700",
         fill=theme.value,
-        tracking=1.5,
+        tracking=1.2,
         family=SERIF,
     )
-    canvas.text(text_x, top + 54, config.ROLE, size=13, fill=theme.text, family=SERIF)
+    canvas.text(text_x, top + 50, config.ROLE, size=13, fill=theme.muted, family=SERIF)
 
-    canvas.y = top + mark_h + 38
+    canvas.y = top + mark + 40
 
 
 def _draw_columns(canvas: Canvas, stats: ProfileStats) -> None:

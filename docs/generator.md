@@ -1,15 +1,18 @@
 # How the profile card is generated
 
-`README.md` displays two SVGs — `dark_mode.svg` and `light_mode.svg` — that a
-scheduled workflow regenerates every day at 04:00 UTC. Both files are
-generated output: edit `profilecard/config.py` and re-run the generator
-instead of editing the SVGs by hand.
+`README.md` displays a spider lily banner (`assets/spider-lily.gif`) above
+`profile_card.svg`, which a scheduled workflow regenerates every day at 04:00
+UTC. The card is generated output: edit `profilecard/config.py` and re-run the
+generator instead of editing the SVG by hand.
+
+The card has one theme, taken from the portfolio's light Ghoul world, and is
+the same in GitHub's light and dark colour schemes.
 
 ```
 generate_svg.py        CLI entry point
 profilecard/
   config.py            identity, links, declared stack   ← edit this
-  theme.py             the dark and light palettes
+  theme.py             the Ghoul palette
   langcolors.py        language swatch colours
   model.py             ProfileStats + the last-known-good cache
   github.py            API access that degrades instead of raising
@@ -28,7 +31,7 @@ export ACCESS_TOKEN=ghp_...        # a personal access token
 python generate_svg.py             # fetch and regenerate
 
 python generate_svg.py --offline   # re-render from cache, no network
-python generate_svg.py --check     # verify the committed SVGs are current
+python generate_svg.py --check     # verify the committed SVG is current
 python generate_svg.py --strict    # exit non-zero if anything degraded
 ```
 
@@ -117,7 +120,7 @@ when the card stops moving, check the workflow annotations first: an expired
 
 ## Changing what the card says
 
-Everything human-written lives in `profilecard/config.py`: name, monogram,
+Everything human-written lives in `profilecard/config.py`: name,
 tagline, the `whoami` rows, the declared stack chips, and
 `DEV_SINCE` for the dev-age counter. The layout is a vertical flow — sections
 report the height they use, so adding or removing a row reflows the card and
@@ -128,8 +131,8 @@ sparkline only appears once the contribution calendar is readable, and the
 measured language bar falls back to `STACK_FALLBACK` chips when language bytes
 are unavailable.
 
-After changing the config, regenerate and commit the SVGs — CI runs
-`--check` and fails if they drift from `cache/stats.json`.
+After changing the config, regenerate and commit the SVG — CI runs
+`--check` and fails if it drifts from `cache/stats.json`.
 
 ## Tests
 

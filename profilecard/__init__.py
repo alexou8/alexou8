@@ -5,7 +5,7 @@ The package is split so that fetching and drawing never depend on each other:
   config      – everything a human would want to edit (identity, links, stack)
   theme       – the dark/light colour palettes
   langcolors  – GitHub's language swatch colours
-  emblem      – the Wings of Freedom, traced from the site's own art
+  emblem      – the red spider lily, the Ghoul world's mark
   model       – the ProfileStats dataclass plus cache load/merge/save
   github      – API client that degrades instead of raising
   render      – turns a ProfileStats into an SVG string
