@@ -42,9 +42,6 @@ STACK_FALLBACK = [
     "SQL",
 ]
 
-# Frameworks and tools, always shown as a second chip row.
-TOOLBELT = ["FastAPI", "React", "PostgreSQL", "TensorFlow", "Docker"]
-
 # Languages to leave out of the measured language bar.  Generated or
 # vendored files otherwise drown out the languages actually written.
 LANGUAGE_DENYLIST = {

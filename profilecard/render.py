@@ -354,11 +354,10 @@ def _draw_columns(canvas: Canvas, stats: ProfileStats) -> None:
             value.format(dev_age=dev_age),
         )
 
+    # Three rows, so the column is as long as whoami beside it.
     rows = [
         ("Repos", _fmt(stats.repos)),
-        ("Stars", _fmt(stats.stars)),
         ("Commits", _fmt(stats.commits)),
-        ("Contributed", _fmt(stats.contributed)),
     ]
     for index, (key, value) in enumerate(rows):
         canvas.kv_row(COL_X[1], y + index * ROW_STEP, COL_W, key, value)
@@ -445,8 +444,7 @@ def _draw_stack(canvas: Canvas, stats: ProfileStats) -> None:
     else:
         y += canvas.chips(PAD, y - 14, CONTENT_W, config.STACK_FALLBACK) - 6
 
-    y += canvas.chips(PAD, y, CONTENT_W, config.TOOLBELT) + 8
-    canvas.y = y + 22
+    canvas.y = y + 30
 
 
 def _draw_activity(canvas: Canvas, stats: ProfileStats) -> None:
