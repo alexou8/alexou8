@@ -118,7 +118,7 @@ when the card stops moving, check the workflow annotations first: an expired
 ## Changing what the card says
 
 Everything human-written lives in `profilecard/config.py`: name, monogram,
-tagline, the `whoami` rows, the declared stack chips, the contact list, and
+tagline, the `whoami` rows, the declared stack chips, and
 `DEV_SINCE` for the dev-age counter. The layout is a vertical flow — sections
 report the height they use, so adding or removing a row reflows the card and
 resizes the SVG automatically.

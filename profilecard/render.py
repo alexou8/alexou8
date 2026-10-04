@@ -394,7 +394,6 @@ def _draw_columns(canvas: Canvas, stats: ProfileStats) -> None:
         ("Repos", _fmt(stats.repos)),
         ("Stars", _fmt(stats.stars)),
         ("Commits", _fmt(stats.commits)),
-        ("Followers", _fmt(stats.followers)),
         ("Contributed", _fmt(stats.contributed)),
     ]
     for index, (key, value) in enumerate(rows):
@@ -534,19 +533,6 @@ def _draw_activity(canvas: Canvas, stats: ProfileStats) -> None:
     canvas.y = y + 22
 
 
-def _draw_contact(canvas: Canvas) -> None:
-    theme = canvas.theme
-    top = canvas.y
-    canvas.section_label(PAD, top, "contact", CONTENT_W)
-    y = top + 26
-    cell = CONTENT_W / len(config.CONTACT)
-    for index, (label, value) in enumerate(config.CONTACT):
-        x = PAD + index * cell
-        canvas.text(x, y, label.upper(), size=10.5, fill=theme.muted, tracking=2.0)
-        canvas.text(x, y + 21, value, size=13.5, fill=theme.key)
-    canvas.y = y + 48
-
-
 def _draw_footer(canvas: Canvas, stats: ProfileStats) -> None:
     theme = canvas.theme
     y = canvas.y
@@ -573,7 +559,6 @@ def render(stats: ProfileStats, theme: Theme) -> str:
     _draw_columns(canvas, stats)
     _draw_stack(canvas, stats)
     _draw_activity(canvas, stats)
-    _draw_contact(canvas)
     _draw_footer(canvas, stats)
 
     height = canvas.y
