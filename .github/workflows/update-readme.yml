@@ -60,7 +60,7 @@ jobs:
           # cache/ is committed on purpose: it carries the per-repository
           # line counts and the last known good stats, which is what lets a
           # degraded run render yesterday's numbers instead of zeroes.
-          git add dark_mode.svg light_mode.svg cache/
+          git add profile_card.svg cache/
 
           if git diff --cached --quiet; then
             echo "Nothing changed."

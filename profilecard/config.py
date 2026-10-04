@@ -22,11 +22,11 @@ DEV_SINCE = datetime.date(2021, 9, 1)
 #
 # Deliberately short.  The rows that used to be here — editor, languages
 # spoken — are the ones every profile card carries and none of them tell a
-# reader anything about the work.
+# reader anything about the work.  Location, links and follower count are
+# left off too: the profile sidebar already shows them, right beside the card.
 WHOAMI = [
     ("School", "Wilfrid Laurier University"),
     ("Program", "Computer Science (BCS)"),
-    ("Based in", "Toronto, ON"),
     ("Writing code", "{dev_age}"),
 ]
 
@@ -42,9 +42,6 @@ STACK_FALLBACK = [
     "SQL",
 ]
 
-# Frameworks and tools, always shown as a second chip row.
-TOOLBELT = ["FastAPI", "React", "PostgreSQL", "TensorFlow", "Docker"]
-
 # Languages to leave out of the measured language bar.  Generated or
 # vendored files otherwise drown out the languages actually written.
 LANGUAGE_DENYLIST = {
@@ -59,20 +56,9 @@ LANGUAGE_DENYLIST = {
 # Number of language segments to draw before collapsing into "Other".
 LANGUAGE_SLOTS = 6
 
-# ── Contact ───────────────────────────────────────────────────────────────
-# The card is an image, so none of this is clickable; the README carries the
-# real links under it.  These are here because a reader who screenshots the
-# card, or meets it outside GitHub, still needs to know where to go.
-CONTACT = [
-    ("Portfolio", "alexou.ca"),
-    ("GitHub", "github.com/alexou8"),
-    ("LinkedIn", "linkedin.com/in/alexou8"),
-]
-
 # ── Output ────────────────────────────────────────────────────────────────
 OUTPUTS = {
-    "dark": "dark_mode.svg",
-    "light": "light_mode.svg",
+    "ghoul": "profile_card.svg",
 }
 
 CARD_WIDTH = 920
