@@ -20,13 +20,13 @@
 <text x="440" y="190" font-size="13.5" fill="#0c0b0e" text-anchor="end">Computer Science (BCS)</text>
 <line x1="99.12" y1="186" x2="248.35" y2="186" stroke="#55525a" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="32" y="215" font-size="13.5" fill="#5a0a10">Writing code</text>
-<text x="440" y="215" font-size="13.5" fill="#0c0b0e" text-anchor="end">5 years, 1 month, 20 days</text>
+<text x="440" y="215" font-size="13.5" fill="#0c0b0e" text-anchor="end">5 years, 1 month, 21 days</text>
 <line x1="140.63" y1="211" x2="223.44" y2="211" stroke="#55525a" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="480" y="165" font-size="13.5" fill="#5a0a10">Repos</text>
 <text x="888" y="165" font-size="13.5" fill="#0c0b0e" text-anchor="end">22</text>
 <line x1="530.51" y1="161" x2="862.39" y2="161" stroke="#55525a" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="480" y="190" font-size="13.5" fill="#5a0a10">Commits</text>
-<text x="888" y="190" font-size="13.5" fill="#0c0b0e" text-anchor="end">51,071</text>
+<text x="888" y="190" font-size="13.5" fill="#0c0b0e" text-anchor="end">51,074</text>
 <line x1="547.12" y1="186" x2="829.18" y2="186" stroke="#55525a" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="480" y="215" font-size="13.5" fill="#5a0a10">Lines of code</text>
 <text x="888" y="215" font-size="13.5" fill="#0c0b0e" text-anchor="end"><tspan fill="#0c0b0e">510,878</tspan><tspan fill="#55525a">  </tspan><tspan fill="#1f6b3a">+553.9K</tspan><tspan fill="#55525a"> / </tspan><tspan fill="#a3121c">-43.1K</tspan></text>
@@ -35,23 +35,23 @@
 <line x1="359.81" y1="252" x2="888" y2="252" stroke="#cfcbc6" stroke-width="1" opacity="0.85"/>
 <clipPath id="lang-clip"><rect x="32" y="276" width="856" height="13" rx="0"/></clipPath>
 <g clip-path="url(#lang-clip)">
-<rect x="32" y="276" width="295.71" height="13" fill="#3178c6"/>
-<rect x="327.71" y="276" width="277.46" height="13" fill="#3572A5"/>
-<rect x="605.17" y="276" width="120.54" height="13" fill="#e34c26"/>
-<rect x="725.71" y="276" width="74.77" height="13" fill="#f1e05a"/>
-<rect x="800.48" y="276" width="42.67" height="13" fill="#563d7c"/>
-<rect x="843.15" y="276" width="29.67" height="13" fill="#00ADD8"/>
-<rect x="872.82" y="276" width="15.18" height="13" fill="#8b949e"/>
+<rect x="32" y="276" width="299.25" height="13" fill="#3178c6"/>
+<rect x="331.25" y="276" width="275.63" height="13" fill="#3572A5"/>
+<rect x="606.89" y="276" width="119.76" height="13" fill="#e34c26"/>
+<rect x="726.64" y="276" width="74.31" height="13" fill="#f1e05a"/>
+<rect x="800.95" y="276" width="42.5" height="13" fill="#563d7c"/>
+<rect x="843.45" y="276" width="29.47" height="13" fill="#00ADD8"/>
+<rect x="872.92" y="276" width="15.08" height="13" fill="#8b949e"/>
 </g>
 <circle cx="37" cy="309" r="5" fill="#3178c6"/>
 <text x="49" y="313" font-size="12.5" fill="#1d1b20">TypeScript</text>
-<text x="133.88" y="313" font-size="12.5" fill="#55525a">34.5%</text>
+<text x="133.88" y="313" font-size="12.5" fill="#55525a">35.0%</text>
 <circle cx="251" cy="309" r="5" fill="#3572A5"/>
 <text x="263" y="313" font-size="12.5" fill="#1d1b20">Python</text>
-<text x="317.12" y="313" font-size="12.5" fill="#55525a">32.4%</text>
+<text x="317.12" y="313" font-size="12.5" fill="#55525a">32.2%</text>
 <circle cx="465" cy="309" r="5" fill="#e34c26"/>
 <text x="477" y="313" font-size="12.5" fill="#1d1b20">HTML</text>
-<text x="515.75" y="313" font-size="12.5" fill="#55525a">14.1%</text>
+<text x="515.75" y="313" font-size="12.5" fill="#55525a">14.0%</text>
 <circle cx="679" cy="309" r="5" fill="#f1e05a"/>
 <text x="691" y="313" font-size="12.5" fill="#1d1b20">JavaScript</text>
 <text x="775.88" y="313" font-size="12.5" fill="#55525a">8.7%</text>
@@ -60,44 +60,44 @@
 <text x="80.06" y="335" font-size="12.5" fill="#55525a">5.0%</text>
 <circle cx="251" cy="331" r="5" fill="#00ADD8"/>
 <text x="263" y="335" font-size="12.5" fill="#1d1b20">Go</text>
-<text x="286.38" y="335" font-size="12.5" fill="#55525a">3.5%</text>
+<text x="286.38" y="335" font-size="12.5" fill="#55525a">3.4%</text>
 <circle cx="465" cy="331" r="5" fill="#8b949e"/>
 <text x="477" y="335" font-size="12.5" fill="#1d1b20">Other</text>
 <text x="523.44" y="335" font-size="12.5" fill="#55525a">1.8%</text>
 <text x="32" y="379" font-size="11.5" fill="#a3121c" font-weight="700" letter-spacing="1.7">ACTIVITY · LAST 30 WEEKS</text>
 <line x1="254.54" y1="375" x2="888" y2="375" stroke="#cfcbc6" stroke-width="1" opacity="0.85"/>
 <rect x="32" y="395" width="24.67" height="46" fill="#a3121c"/>
-<rect x="60.67" y="423.59" width="24.67" height="17.41" fill="#d8737b"/>
-<rect x="89.33" y="431.38" width="24.67" height="9.62" fill="#f1c9cc"/>
+<rect x="60.67" y="424.87" width="24.67" height="16.13" fill="#d8737b"/>
+<rect x="89.33" y="432.01" width="24.67" height="8.99" fill="#f1c9cc"/>
 <rect x="118" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="146.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="175.33" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="204" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="232.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="261.33" y="438" width="24.67" height="3" fill="#e4e0da"/>
-<rect x="290" y="432.42" width="24.67" height="8.58" fill="#f1c9cc"/>
-<rect x="318.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="347.33" y="431.9" width="24.67" height="9.1" fill="#f1c9cc"/>
-<rect x="376" y="431.9" width="24.67" height="9.1" fill="#f1c9cc"/>
+<rect x="290" y="431.75" width="24.67" height="9.25" fill="#f1c9cc"/>
+<rect x="318.67" y="435.45" width="24.67" height="5.55" fill="#f1c9cc"/>
+<rect x="347.33" y="431.22" width="24.67" height="9.78" fill="#f1c9cc"/>
+<rect x="376" y="433.86" width="24.67" height="7.14" fill="#f1c9cc"/>
 <rect x="404.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="433.33" y="420.47" width="24.67" height="20.53" fill="#d8737b"/>
-<rect x="462" y="415.27" width="24.67" height="25.73" fill="#c23a44"/>
-<rect x="490.67" y="430.6" width="24.67" height="10.4" fill="#f1c9cc"/>
-<rect x="519.33" y="424.63" width="24.67" height="16.37" fill="#d8737b"/>
-<rect x="548" y="429.05" width="24.67" height="11.95" fill="#d8737b"/>
-<rect x="576.67" y="422.55" width="24.67" height="18.45" fill="#d8737b"/>
-<rect x="605.33" y="434.24" width="24.67" height="6.76" fill="#f1c9cc"/>
-<rect x="634" y="427.49" width="24.67" height="13.51" fill="#d8737b"/>
-<rect x="662.67" y="424.37" width="24.67" height="16.63" fill="#d8737b"/>
-<rect x="691.33" y="425.15" width="24.67" height="15.85" fill="#d8737b"/>
+<rect x="433.33" y="418.26" width="24.67" height="22.74" fill="#d8737b"/>
+<rect x="462" y="417.74" width="24.67" height="23.26" fill="#c23a44"/>
+<rect x="490.67" y="432.28" width="24.67" height="8.72" fill="#f1c9cc"/>
+<rect x="519.33" y="423.82" width="24.67" height="17.18" fill="#d8737b"/>
+<rect x="548" y="429.37" width="24.67" height="11.63" fill="#d8737b"/>
+<rect x="576.67" y="418.53" width="24.67" height="22.47" fill="#d8737b"/>
+<rect x="605.33" y="436" width="24.67" height="5" fill="#f1c9cc"/>
+<rect x="634" y="425.4" width="24.67" height="15.6" fill="#d8737b"/>
+<rect x="662.67" y="426.2" width="24.67" height="14.8" fill="#d8737b"/>
+<rect x="691.33" y="425.4" width="24.67" height="15.6" fill="#d8737b"/>
 <rect x="720" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="748.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="777.33" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="806" y="434.24" width="24.67" height="6.76" fill="#f1c9cc"/>
+<rect x="777.33" y="435.98" width="24.67" height="5.02" fill="#f1c9cc"/>
+<rect x="806" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="834.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="863.33" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<text x="32" y="463" font-size="12.5" fill="#55525a">17,266 contributions in the last year  ·  2 day streak (best 181)</text>
+<text x="32" y="463" font-size="12.5" fill="#55525a">17,271 contributions in the last year  ·  3 day streak (best 181)</text>
 <line x1="32" y1="479" x2="888" y2="479" stroke="#cfcbc6" stroke-width="1" opacity="0.8"/>
-<text x="32" y="501" font-size="11.5" fill="#55525a">updated 2026-10-21 08:59 UTC</text>
+<text x="32" y="501" font-size="11.5" fill="#55525a">updated 2026-10-22 09:01 UTC</text>
 <text x="888" y="501" font-size="11.5" fill="#55525a" text-anchor="end">refreshed daily by GitHub Actions</text>
 </svg>
