@@ -20,8 +20,8 @@
 <text x="440" y="190" font-size="13.5" fill="#0c0b0e" text-anchor="end">Computer Science (BCS)</text>
 <line x1="99.12" y1="186" x2="248.35" y2="186" stroke="#55525a" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="32" y="215" font-size="13.5" fill="#5a0a10">Writing code</text>
-<text x="440" y="215" font-size="13.5" fill="#0c0b0e" text-anchor="end">5 years, 2 months, 9 days</text>
-<line x1="140.63" y1="211" x2="223.44" y2="211" stroke="#55525a" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
+<text x="440" y="215" font-size="13.5" fill="#0c0b0e" text-anchor="end">5 years, 2 months, 10 days</text>
+<line x1="140.63" y1="211" x2="215.13" y2="211" stroke="#55525a" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
 <text x="480" y="165" font-size="13.5" fill="#5a0a10">Repos</text>
 <text x="888" y="165" font-size="13.5" fill="#0c0b0e" text-anchor="end">24</text>
 <line x1="530.51" y1="161" x2="862.39" y2="161" stroke="#55525a" stroke-width="1.4" opacity="0.6" stroke-dasharray="1 5" stroke-linecap="round"/>
@@ -69,35 +69,35 @@
 <rect x="32" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="60.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="89.33" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="118" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="146.67" y="435.3" width="24.67" height="5.7" fill="#f1c9cc"/>
+<rect x="118" y="435.42" width="24.67" height="5.58" fill="#f1c9cc"/>
+<rect x="146.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="175.33" y="438" width="24.67" height="3" fill="#e4e0da"/>
-<rect x="204" y="433.27" width="24.67" height="7.73" fill="#f1c9cc"/>
-<rect x="232.67" y="432.45" width="24.67" height="8.55" fill="#f1c9cc"/>
-<rect x="261.33" y="427.16" width="24.67" height="13.84" fill="#d8737b"/>
-<rect x="290" y="423.9" width="24.67" height="17.1" fill="#d8737b"/>
+<rect x="204" y="425.67" width="24.67" height="15.33" fill="#d8737b"/>
+<rect x="232.67" y="434.49" width="24.67" height="6.51" fill="#f1c9cc"/>
+<rect x="261.33" y="424.74" width="24.67" height="16.26" fill="#d8737b"/>
+<rect x="290" y="424.74" width="24.67" height="16.26" fill="#d8737b"/>
 <rect x="318.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="347.33" y="417.39" width="24.67" height="23.61" fill="#c23a44"/>
+<rect x="347.33" y="404.29" width="24.67" height="36.71" fill="#a3121c"/>
 <rect x="376" y="395" width="24.67" height="46" fill="#a3121c"/>
-<rect x="404.67" y="423.5" width="24.67" height="17.5" fill="#d8737b"/>
-<rect x="433.33" y="419.83" width="24.67" height="21.17" fill="#d8737b"/>
-<rect x="462" y="425.12" width="24.67" height="15.88" fill="#d8737b"/>
-<rect x="490.67" y="411.28" width="24.67" height="29.72" fill="#c23a44"/>
-<rect x="519.33" y="422.68" width="24.67" height="18.32" fill="#d8737b"/>
-<rect x="548" y="421.46" width="24.67" height="19.54" fill="#d8737b"/>
-<rect x="576.67" y="417.39" width="24.67" height="23.61" fill="#c23a44"/>
-<rect x="605.33" y="411.69" width="24.67" height="29.31" fill="#c23a44"/>
+<rect x="404.67" y="422.41" width="24.67" height="18.59" fill="#d8737b"/>
+<rect x="433.33" y="411.73" width="24.67" height="29.27" fill="#c23a44"/>
+<rect x="462" y="419.63" width="24.67" height="21.37" fill="#d8737b"/>
+<rect x="490.67" y="408.01" width="24.67" height="32.99" fill="#c23a44"/>
+<rect x="519.33" y="428.92" width="24.67" height="12.08" fill="#d8737b"/>
+<rect x="548" y="416.84" width="24.67" height="24.16" fill="#c23a44"/>
+<rect x="576.67" y="411.26" width="24.67" height="29.74" fill="#c23a44"/>
+<rect x="605.33" y="412.66" width="24.67" height="28.34" fill="#c23a44"/>
 <rect x="634" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="662.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
 <rect x="691.33" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="720" y="430.42" width="24.67" height="10.58" fill="#f1c9cc"/>
-<rect x="748.67" y="434.49" width="24.67" height="6.51" fill="#f1c9cc"/>
+<rect x="720" y="428.92" width="24.67" height="12.08" fill="#d8737b"/>
+<rect x="748.67" y="433.57" width="24.67" height="7.43" fill="#f1c9cc"/>
 <rect x="777.33" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="806" y="430.82" width="24.67" height="10.18" fill="#f1c9cc"/>
+<rect x="806" y="429.38" width="24.67" height="11.62" fill="#d8737b"/>
 <rect x="834.67" y="436" width="24.67" height="5" fill="#f1c9cc"/>
-<rect x="863.33" y="432.86" width="24.67" height="8.14" fill="#f1c9cc"/>
-<text x="32" y="463" font-size="12.5" fill="#55525a">14,520 contributions in the last year  ·  1 day streak (best 160)</text>
+<rect x="863.33" y="432.64" width="24.67" height="8.36" fill="#f1c9cc"/>
+<text x="32" y="463" font-size="12.5" fill="#55525a">14,520 contributions in the last year  ·  0 day streak (best 160)</text>
 <line x1="32" y1="479" x2="888" y2="479" stroke="#cfcbc6" stroke-width="1" opacity="0.8"/>
-<text x="32" y="501" font-size="11.5" fill="#55525a">updated 2026-11-10 11:57 UTC</text>
+<text x="32" y="501" font-size="11.5" fill="#55525a">updated 2026-11-11 11:35 UTC</text>
 <text x="888" y="501" font-size="11.5" fill="#55525a" text-anchor="end">refreshed daily by GitHub Actions</text>
 </svg>
